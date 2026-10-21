@@ -1,0 +1,20 @@
+URL: http://127.0.0.1:5500/index.html
+
+Host: 127.0.0.1:5500
+
+Puerto: 5500
+
+Ruta: index.html 
+
+Metodo de Peticion: GET
+
+Codigo de Estado: 304
+
+Cannot GET /promociones.html: No es posible encontrar el sitio wed 
+
+HTML: Estructura de una pagina web
+
+CSS: Presentacion de la pagina web
+
+JavaScript: Logica de la pagina web 
+
