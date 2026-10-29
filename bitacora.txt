@@ -18,3 +18,97 @@ CSS: Presentacion de la pagina web
 
 JavaScript: Logica de la pagina web 
 
+--Rutas--
+http://127.0.0.1:5500/index.html -> Pagina Principal
+http://127.0.0.1:5500/paginas/tarifas.html -> Subpagina 
+http://127.0.0.1:5500/paginas/tarifas.html -> Subpagina
+
+--probar el formulario de reservas--
+
+Nombre (TEXTO) : (Vacío)	Debe bloquear el envío con "Completa este campo"	Bloqueó con mensaje de campo obligatorio
+
+Correo	esteban.correo	Debe exigir el carácter @	Solicitó incluir '@' en la dirección
+Correo	esteban@	Debe exigir dominio tras el @	Pidió completar la parte después de '@'
+
+Documento	123abc	Debe rechazar letras según el pattern	Mostró el mensaje del title
+Documento	1234	Debe rechazar por tener menos de 7 dígitos	Mostró el mensaje del title
+
+Celular	2001234567	Debe rechazar porque no empieza por 3	Mostró el mensaje del title
+Celular	30012	Debe rechazar por longitud menor a 10	Mostró el mensaje del title
+
+Cantidad	0 o -2	Debe rechazar por ser menor al min="1"	Mostró que el valor debe ser 1 o superior
+
+--Esquema de la Pagina (Regiones Semánticas)--
+
+1. Página de Inicio (index.html):
+   [HEADER] -> nav#menu (Logo, Enlaces, Formulario buscador)
+   [MAIN]   -> section (¿Quiénes somos?)
+            -> section#servicios (article: descripción, enlaces a rutas, botón reserva)
+            -> section#comoAlquilar (article: details/summary con los 5 pasos)
+            -> section#incluyen (article: details/summary con elementos incluidos)
+            -> section#ubicacion (iframe Google Maps + enlace a correo)
+   [FOOTER] -> section#redesSociales (WhatsApp, Instagram, TikTok, Correo)
+            -> div#footerInfo (Razón social, email y copyright)
+
+2. Tarifas y Recorridos (paginas/tarifas.html):
+   [HEADER] -> nav#menu (Logo, Enlaces a secciones internas)
+   [MAIN]   -> section#tarifas-alquiler (article: table de precios por hora/día)
+            -> section#recorridos-tarifas (article: table de rutas y dificultad)
+            -> section#informacion-adicional (3 artículos con details/summary)
+   [FOOTER] -> section (Redes sociales y contacto)
+            -> Derechos reservados y enlace de regreso
+
+3. Reservas (paginas/reservas.html):
+   [HEADER] -> nav#menu (Logo y navegación principal)
+   [MAIN]   -> section (form: datos personales y selección de bicicleta/fecha/hora)
+            -> section (contacto alternativo vía correo)
+            -> section (dl: lista de horarios de atención semanal y festivos)
+   [FOOTER] -> section (Redes sociales) y div (Copyright)
+
+--Justificación del uso de desplegables (<details> y <summary>)--
+
+1. Divulgación Progresiva (Progressive Disclosure):
+   Permite mantener la interfaz limpia y organizada, evitando sobrecargar al usuario
+   con bloques extensos de texto secundario (como los 5 pasos de alquiler o recomendaciones).
+   El visitante explora solo el contenido que necesita leer en ese momento.
+
+2. Optimización en Dispositivos Móviles (Responsive UX):
+   Reduce drásticamente el desplazamiento vertical (scroll infinito) en pantallas pequeñas,
+   permitiendo escanear la página de manera rápida y cómoda.
+
+3. Accesibilidad y Estándar Nativo (HTML5):
+   Al ser componentes nativos del navegador, ofrecen soporte automático para navegación
+   por teclado (Enter / Espacio) y lectores de pantalla (anuncian si está 'abierto' o 'cerrado'),
+   sin requerir scripts complejos ni sobrecargar la página con JavaScript.
+
+--paleta de colores para fondos, botones y enlaces--
+
+Elemento / Combinación                         Color / Hex            Fondo                  Ratio     Cumplimiento WCAG
+------------------------------------------------------------------------------------------------------------------------
+Texto principal (Blanco Hielo)                 #F1F5F9                Fondo Noche (#0B131E)  16.54:1   AA y AAA (Excelente lectura)
+Texto principal sobre tarjetas/secciones       #F1F5F9                Superficie (#16222F)   14.07:1   AA y AAA (Gran nitidez)
+Enlaces y texto interactivo (Menta Esmeralda)  #34D399                Fondo Noche (#0B131E)   9.54:1   AA y AAA (Enlaces destacados)
+Texto oscuro sobre Botón Principal (Esmeralda) #0B131E                Botón (#10B981)         7.54:1   AA y AAA (Botón de reserva)
+Texto oscuro sobre Acento (Ámbar Solar)        #0B131E                Acento (#FBBF24)       11.05:1   AA y AAA (Página activa/alertas)
+Texto oscuro sobre Botón Secundario (Naranja)  #0B131E                Naranja (#F97316)       5.80:1   AA (Llamada secundaria)
+
+--repositorio de githib-- 
+
+https://github.com/EstebanOspinaRestrepo/RuedasLibres.git
+
+--Causa del Problema--
+
+El problema era que la clase que estuviera .activo aparecia tachada en la Devtools y la justificacion es porque no va tomar las caracteristicas
+que le demos en el css porque como prioridad se le hace los estilos a los id. 
+
+ejemplo:
+
+    .activo{
+        color:while;    <<--Esto aparecera subrayado-->>
+    }
+
+    #menu a.activo{
+        colo:while;     <<--Este seria la solucion al problema-->>
+    }
+
+

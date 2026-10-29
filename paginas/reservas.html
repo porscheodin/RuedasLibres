@@ -5,25 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva tu bicicleta | Ruedas Libres</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <meta name="description"
         content="Reserva tu bicicleta en línea con Ruedas Libres en Medellín. Conoce nuestros horarios de atención y contáctanos fácilmente.">
 </head>
 
 <body>
-    <header>
-        <img src="../img/logo.png" alt="Logo de Ruedas Libres" width="200">
-        <nav>
+
+    <!-- Encabezado y Navegacion -->
+    <header id="encabezado">
+        <nav id="menu">
+            <img src="../img/logo.svg" alt="Logo de Ruedas Libres">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="tarifas.html">Tarifas y rutas</a></li>
                 <li><a href="reservas.html">Reservas</a></li>
             </ul>
         </nav>
-        <h1>Reserva tu bicicleta</h1>
-        <p>Asegura tu bicicleta o recorrido guiado para tu próxima aventura en Medellín.</p>
     </header>
 
-    <main>
+    <!-- Contenido de la Pagina -->
+    <main id="cuerpo">
+        <section>
+            <form action="" method="post">
+                <h3 id="subtitulo">Formulario de Reserva</h3>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required pattern="[A-Za-z0-9]{5,100}">
+                <br>
+                <label for="documento">Documento:</label>
+                <input type="tel" id="documento" name="documento" required pattern="[0-9]{6,10}"
+                    title="Debe de tener 6 a 10 numeros">
+                <br>
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required title="No es un Correo">
+                <br>
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required pattern="3[0-9]{10}"
+                    title="Debe de tener 10 numeros">
+                <br>
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" required minlength="5" maxlength="100"></textarea>
+                <br>
+                <h3>Reservar bicicleta</h3>
+                <label for="ubicacion">Ubicación</label>
+                <input type="text" id="ubicacion" name="ubicacion" required>
+                <br>
+                <label for="fecha">Fecha</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <br>
+                <label for="hora">Hora</label>
+                <input type="time" id="hora" name="hora" required>
+                <br>
+                <label for="bicicleta">Bicicleta</label>
+                <select id="bicicleta" name="bicicleta" required>
+                    <option value="">Selecciona una bicicleta</option>
+                    <option value="mtb">Mountain Bike</option>
+                    <option value="ruta">Bicicleta de Ruta</option>
+                    <option value="electrica">Bicicleta Eléctrica</option>
+                </select>
+                <br>
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" required>
+                <br>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
         <section>
             <h2>Contacto para Reservas</h2>
             <p>
@@ -48,6 +94,7 @@
         </section>
     </main>
 
+    <!-- Pie de Pagina -->
     <footer>
         <section>
             <h4>Contacto y Redes Sociales</h4>
