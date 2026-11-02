@@ -1,0 +1,490 @@
+/* ==========================================================================
+   1. VARIABLES DE DISEÑO & RESET UNIVERSAL
+   ========================================================================== */
+:root {
+    /* Paleta 'Verde Ciclovía & Urbano' - Sostenible, Deportiva y Elegante */
+    --color-fondo: #0B131E;
+    /* Noche asfalto profundo */
+    --color-superficie: #16222F;
+    /* Fondo de secciones y tarjetas */
+    --color-superficie-card: #0F172A;
+    /* Fondo interno de tarjetas individuales */
+    --color-texto: #F1F5F9;
+    /* Blanco hielo suave (anti-fatiga visual) */
+    --color-texto-oscuro: #0B131E;
+    /* Texto oscuro sobre fondos claros/botones */
+
+    /* Colores de Marca y Acción */
+    --color-primario: #10B981;
+    /* Verde Esmeralda: Movilidad y ecología */
+    --color-secundario: #F97316;
+    /* Naranja Aventura: Destacados y badge */
+    --color-boton: #10B981;
+    /* Botón principal */
+    --color-boton-hover: #059669;
+    /* Hover botón principal */
+    --color-texto-boton: #34D399;
+    /* Menta Esmeralda: Enlaces interactivos */
+    --color-acento: #FBBF24;
+    /* Ámbar Solar: Ítems activos y contrastes */
+
+    /* Tipografía */
+    --font-primary: "Roboto", Arial, sans-serif;
+    --font-secundary: "Merriweather", Georgia, serif;
+
+    /* Escala Modular de Espaciados */
+    --spacin-xs: 0.25rem;
+    /* 4px */
+    --spacin-sm: 0.5rem;
+    /* 8px */
+    --spacin-md: 1rem;
+    /* 16px */
+    --spacin-lg: 1.5rem;
+    /* 24px */
+    --spacin-xl: 2rem;
+    /* 32px */
+    --spacin-2xl: 3rem;
+    /* 48px */
+}
+
+/* Modelo de caja global: ancho incluye relleno y borde */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. ELEMENTOS BASE Y TIPOGRAFÍA
+   ========================================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    font-family: var(--font-primary);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-primario);
+    margin-top: 0;
+    margin-bottom: var(--spacin-md);
+}
+
+p {
+    margin: var(--spacin-sm) 0;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--color-texto-boton);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-primario);
+}
+
+/* Botón reutilizable */
+.btn {
+    display: inline-block;
+    padding: var(--spacin-sm) var(--spacin-lg);
+    background-color: var(--color-boton);
+    color: var(--color-texto-oscuro);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: var(--spacin-xs);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    align-self: flex-start;
+}
+
+.btn:hover {
+    background-color: var(--color-boton-hover);
+    color: var(--color-texto-oscuro);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. ENCABEZADO Y NAVEGACIÓN
+   ========================================================================== */
+#encabezado {
+    width: 100%;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacin-md);
+    margin: 0;
+    padding: var(--spacin-md) var(--spacin-xl);
+    background-color: var(--color-superficie);
+    border-bottom: 2px solid var(--color-primario);
+}
+
+#menu img {
+    filter: brightness(0) invert(1);
+    width: 180px;
+    height: auto;
+}
+
+#menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacin-lg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu a {
+    color: var(--color-texto);
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: var(--spacin-xs) var(--spacin-sm);
+    border-radius: var(--spacin-xs);
+}
+
+#menu a:hover {
+    color: var(--color-primario);
+}
+
+#menu a.activo {
+    color: var(--color-acento);
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-acento);
+}
+
+#menu form {
+    margin-left: auto;
+    /* Empuja el buscador al extremo derecho del menú */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacin-xs);
+    flex-wrap: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: var(--spacin-xs) var(--spacin-sm);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#menu input[type="search"] {
+    display: inline-block;
+    width: 140px;
+    margin: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    padding: var(--spacin-xs);
+}
+
+#menu input[type="search"]::placeholder {
+    color: #cbd5e1;
+}
+
+#menu input[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0 var(--spacin-xs);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   4. ESTRUCTURA & CONTENEDOR PRINCIPAL
+   ========================================================================== */
+#cuerpo {
+    max-width: 75rem;
+    /* Limita el ancho usando rem */
+    width: 100%;
+    margin: 0 auto;
+    /* Centrado horizontal */
+    padding: var(--spacin-xl) var(--spacin-md);
+}
+
+/* Portada con altura relativa al alto de la ventana */
+#portada,
+#cuerpo>section:first-of-type {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section {
+    margin: var(--spacin-xl) 0;
+    padding: var(--spacin-xl);
+    border-radius: 20px;
+    background-color: var(--color-superficie);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
+}
+
+article {
+    padding: var(--spacin-sm);
+}
+
+/* Elementos interactivos desplegables */
+details {
+    margin: var(--spacin-sm) 0;
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color-primario);
+    padding: var(--spacin-xs) 0;
+    user-select: none;
+}
+
+/* ==========================================================================
+   5. COMPONENTES: TARJETAS DE SERVICIOS & BADGE "NUEVO"
+   ========================================================================== */
+#servicios .servicios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacin-lg);
+    margin-top: var(--spacin-md);
+}
+
+.tarjeta-servicio {
+    position: relative;
+    /* Contexto de posicionamiento para la etiqueta absoluta */
+    flex: 1 1 300px;
+    background-color: var(--color-superficie-card);
+    border: 1px solid var(--color-primario);
+    border-radius: var(--spacin-sm);
+    padding: var(--spacin-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2);
+}
+
+/* Imagen a ancho completo dentro de la tarjeta */
+.tarjeta-servicio img {
+    width: 100%;
+    /* Unidad porcentual que llena la tarjeta */
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--spacin-xs);
+    margin-bottom: var(--spacin-md);
+    display: block;
+}
+
+/* Etiqueta "Nuevo" en esquina superior sin desplazar el contenido */
+.badge-nuevo {
+    position: absolute;
+    /* Posición absoluta respecto a .tarjeta-servicio */
+    top: var(--spacin-md);
+    right: var(--spacin-md);
+    background-color: var(--color-secundario);
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    padding: var(--spacin-xs) var(--spacin-sm);
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    /* Flota sobre la imagen sin alterar el flujo */
+}
+
+/* ==========================================================================
+   6. COMPONENTES: TABLAS (LECTURA & CONTRASTE ACCESIBLE)
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Fusión de bordes */
+    margin: var(--spacin-lg) 0;
+    overflow: hidden;
+    border-radius: var(--spacin-xs);
+}
+
+table caption {
+    font-weight: bold;
+    margin-bottom: var(--spacin-sm);
+    color: var(--color-acento);
+    text-align: left;
+}
+
+table thead th {
+    background-color: var(--color-primario);
+    color: var(--color-texto-oscuro);
+    /* Contraste WCAG > 7.5:1 */
+    padding: var(--spacin-md);
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid var(--color-primario);
+}
+
+table th,
+table td {
+    padding: var(--spacin-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    color: var(--color-texto);
+}
+
+table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+table tbody tr:hover {
+    background-color: rgba(16, 185, 129, 0.1);
+}
+
+/* ==========================================================================
+   7. COMPONENTES: FORMULARIOS
+   ========================================================================== */
+form {
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+#cuerpo form label {
+    display: block;
+    /* Cada etiqueta arriba de su campo */
+    margin-top: var(--spacin-md);
+    margin-bottom: var(--spacin-xs);
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+#cuerpo form input:not([type="submit"]),
+#cuerpo form select,
+#cuerpo form textarea {
+    display: block;
+    /* Campos a todo el ancho disponible */
+    width: 100%;
+    padding: var(--spacin-sm) var(--spacin-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--spacin-xs);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    background-color: var(--color-superficie-card);
+    color: var(--color-texto);
+    margin-bottom: var(--spacin-sm);
+}
+
+#cuerpo form input:focus,
+#cuerpo form select:focus,
+#cuerpo form textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35);
+}
+
+#cuerpo form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Botón de envío con relleno generoso en el formulario principal */
+#cuerpo form button[type="submit"],
+#cuerpo form input[type="submit"] {
+    display: inline-block;
+    margin-top: var(--spacin-xl);
+    padding: var(--spacin-md) var(--spacin-2xl);
+    /* Relleno generoso */
+    background-color: var(--color-boton);
+    color: var(--color-texto-oscuro);
+    border: none;
+    border-radius: var(--spacin-xs);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#cuerpo form button[type="submit"]:hover,
+#cuerpo form input[type="submit"]:hover {
+    background-color: var(--color-boton-hover);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   8. COMPONENTE FLOTANTE: BOTÓN DE WHATSAPP
+   ========================================================================== */
+.btn-whatsapp {
+    position: fixed;
+    /* Fijo en pantalla durante el scroll */
+    bottom: var(--spacin-lg);
+    right: var(--spacin-lg);
+    background-color: #25D366;
+    /* Verde oficial WhatsApp */
+    color: #FFFFFF;
+    font-family: var(--font-primary);
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: var(--spacin-sm) var(--spacin-lg);
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    /* Siempre visible */
+    display: flex;
+    align-items: center;
+    gap: var(--spacin-xs);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1EBE5D;
+    color: #FFFFFF;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+/* ==========================================================================
+   9. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+footer#footer,
+footer {
+    background-color: var(--color-superficie);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--spacin-xl);
+    /* Margen inferior extra para garantizar que el botón flotante no tape texto */
+    padding-bottom: calc(var(--spacin-2xl) + 2rem);
+    margin-top: var(--spacin-2xl);
+    text-align: center;
+}
+
+#footerInfo p {
+    margin: var(--spacin-xs) 0;
+}
+
+/* ==========================================================================
+   10. ACCESIBILIDAD Y NAVEGACIÓN POR TECLADO
+   ========================================================================== */
+:focus-visible {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 3px;
+}

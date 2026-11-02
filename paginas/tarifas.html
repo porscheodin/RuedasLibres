@@ -17,10 +17,14 @@
         <nav id="menu">
             <img src="../img/logo.svg" alt="Logo de Ruedas Libres">
             <ul>
-                <li><a href="../index.html">← Volver al Inicio</a></li>
-                <li><a href="#recorridos">Recorridos Guiados</a></li>
-                <li><a href="#informacion-adicional">Información al Cliente</a></li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="tarifas.html" class="activo">Tarifas y rutas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
             </ul>
+            <form action="" method="get">
+                <input type="search" name="q" placeholder="búsqueda" aria-label="Buscar en el sitio" />
+                <input type="submit" value="🔎" aria-label="Enviar búsqueda" />
+            </form>
         </nav>
     </header>
 
@@ -157,23 +161,18 @@
     </main>
 
     <!-- Pie de Pagina -->
-    <footer>
-        <section>
-            <h4>Contacto y Redes Sociales</h4>
-            <ul>
-                <li>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/573001234567" target="_blank">+57 300 123
-                        4567</a></li>
-                <li>📸 <strong>Instagram:</strong> <a href="https://www.instagram.com/ruedaslibres"
-                        target="_blank">@ruedaslibres</a></li>
-                <li>🎵 <strong>TikTok:</strong> <a href="https://www.tiktok.com/@ruedaslibres"
-                        target="_blank">@ruedaslibres</a></li>
-                <li>✉️ <strong>Correo electrónico:</strong> <a
-                        href="mailto:contacto@ruedaslibres.com">contacto@ruedaslibres.com</a></li>
-            </ul>
-        </section>
-        <p>&copy; 2026 Ruedas Libres. Todos los derechos reservados.</p>
-        <p><a href="../index.html">← Volver al Inicio</a></p>
+    <footer id="footer">
+        <div id="footerInfo">
+            <p><strong>Ruedas Libres</strong> - Movilidad Sostenible en Medellín</p>
+            <p>Correo: <a href="mailto:contacto@ruedaslibres.com">contacto@ruedaslibres.com</a></p>
+            <p>&copy; 2026 Ruedas Libres. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
+    <!-- Enlace flotante de WhatsApp -->
+    <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        💬 WhatsApp
+    </a>
 </body>
 
 </html>

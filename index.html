@@ -30,17 +30,19 @@
 
     <!-- Contenido Principal -->
     <main id="cuerpo">
-        <section>
+        <section id="portada">
             <h3>¿Quienes Somos?</h3>
             <p>
-                <strong>Somos un grupo de personas apasionadas por la</strong> ciclismo y el turismo sostenible.
+                <strong>Somos un grupo de personas apasionadas por el</strong> ciclismo y el turismo sostenible.
                 Creemos que la mejor manera de conocer Medellín es recorriéndola en bicicleta, sintiendo la brisa,
                 descubriendo cada barrio y disfrutando de los paisajes que ofrece esta hermosa ciudad.
-
+            </p>
+            <p>
                 Fundamos Rueda Libre con el objetivo de ofrecer una alternativa de transporte ecológica, saludable y
                 divertida. Queremos que locales y visitantes se animen a pedalear, explorar y vivir Medellín de una
                 manera diferente, conectando con la cultura paisa y sus historias.
-
+            </p>
+            <p>
                 <strong>Estamos ubicados en el corazón de Medellín</strong>, cerca de ciclovías, parques y rutas
                 turísticas, lo que nos permite brindar un servicio rápido, cómodo y adaptado a las necesidades de
                 cada ciclista.
@@ -49,29 +51,38 @@
 
         <section id="servicios">
             <h3>Nuestros Servicios</h3>
-            <article>
-                <p>
-                    ¡Hola! Somos Rueda Libre, tu mejor opción para explorar Medellín de manera sostenible y divertida.
-                    Ofrecemos alquiler de bicicletas para tours, recorridos turísticos y transporte por la ciudad.
-                    Trabajamos con personas locales, turistas y empresas que buscan movilidad ecológica, cómoda y
-                    accesible.
-                </p>
-                <p>
-                    Nuestros servicios incluyen: <a href="paginas/tarifas.html#recorridos">recorridos guiados y tours
-                        por
-                        la ciudad</a>, tours autoguiados por ciclovías y rutas escénicas, alquiler por horas o
-                    días, bicicletas para distintos terrenos (urbano, montaña, eléctricas), <strong>chalecos
-                        reflectivos,
-                        candados de seguridad y mapas con rutas recomendadas.</strong> Todo con excelente mantenimiento,
-                    precios
-                    transparentes y atención personalizada.
-                </p>
-                <p>
-                    🚴 Conoce todos los planes y precios en nuestra sección de <a
-                        href="paginas/tarifas.html#recorridos">Recorridos Guiados</a>.
-                </p>
-                <a href="paginas/reservas.html" class="btn">Reservar ahora</a>
-            </article>
+            <div class="servicios-grid">
+                <article class="tarjeta-servicio">
+                    <img src="img/alquiler.jpg" alt="Alquiler de Bicicletas en Medellín">
+                    <h4>Alquiler por Horas o Días</h4>
+                    <p>
+                        Bicicletas urbanas, de montaña y de ruta en óptimas condiciones. Incluye chaleco reflectivo,
+                        candado de seguridad y mapa de ciclovías.
+                    </p>
+                    <a href="paginas/reservas.html" class="btn">Alquilar Ahora</a>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <img src="img/tours.jpg" alt="Recorridos Guiados y Tours">
+                    <h4>Recorridos Guiados y Tours</h4>
+                    <p>
+                        Pedalea con guías locales por las mejores rutas escénicas y turísticas de Medellín. Una
+                        experiencia cultural, divertida y sobre dos ruedas.
+                    </p>
+                    <a href="paginas/tarifas.html#recorridos" class="btn">Ver Rutas</a>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <span class="badge-nuevo">Nuevo</span>
+                    <img src="img/electricas.jpg" alt="Bicicletas Eléctricas">
+                    <h4>Bicicletas Eléctricas</h4>
+                    <p>
+                        Conquista las pendientes y distancias de la ciudad sin agotarte. Movilidad ágil, potente y 100%
+                        ecológica para tus recorridos diarios.
+                    </p>
+                    <a href="paginas/reservas.html" class="btn">Reservar E-Bike</a>
+                </article>
+            </div>
         </section>
 
         <section id="comoAlquilar">
@@ -137,25 +148,18 @@
 
     <!-- Pie de Pagina -->
     <footer id="footer">
-        <section id="redesSociales">
-            <h3>Contacto y Redes Sociales</h3>
-            <ul>
-                <li>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/573001234567" target="_blank">+57 300 123
-                        4567</a></li>
-                <li>📸 <strong>Instagram:</strong> <a href="https://www.instagram.com/ruedaslibres"
-                        target="_blank">@ruedaslibres</a></li>
-                <li>🎵 <strong>TikTok:</strong> <a href="https://www.tiktok.com/@ruedaslibres"
-                        target="_blank">@ruedaslibres</a></li>
-                <li>✉️ <strong>Correo electrónico:</strong> <a
-                        href="mailto:contacto@ruedaslibres.com">contacto@ruedaslibres.com</a></li>
-            </ul>
-        </section>
         <div id="footerInfo">
-            <p><strong>Ruedas Libres</strong></p>
+            <p><strong>Ruedas Libres</strong> - Movilidad Sostenible en Medellín</p>
             <p>Correo: <a href="mailto:contacto@ruedaslibres.com">contacto@ruedaslibres.com</a></p>
-            <p>&copy; 2026</p>
+            <p>&copy; 2026 Ruedas Libres. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Enlace flotante de WhatsApp -->
+    <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank" rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp">
+        💬 WhatsApp
+    </a>
 </body>
 
 </html>

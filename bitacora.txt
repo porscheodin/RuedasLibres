@@ -111,4 +111,67 @@ ejemplo:
         colo:while;     <<--Este seria la solucion al problema-->>
     }
 
+--Medición de Box-Sizing en DevTools (Pestaña Computed)--
+
+Elemento inspeccionado: Tarjeta de servicio (.tarjeta-servicio / #servicios article)
+Propiedades aplicadas:
+- Ancho base (width / flex-basis): 300px
+- Relleno (padding: var(--spacin-lg)): 1.5rem = 24px (izquierda 24px + derecha 24px = 48px)
+- Borde (border): 1px solid (izquierda 1px + derecha 1px = 2px)
+
+Resultados observados en el modelo de caja (DevTools):
+
+1. Antes de cambiar box-sizing (modelo content-box por defecto):
+   - Caja de contenido: 300px
+   - Padding: 24px a cada lado (+48px)
+   - Border: 1px a cada lado (+2px)
+   -> Ancho total ocupado en pantalla = 300px + 48px + 2px = 350px.
+   Explicación: El relleno y los bordes se sumaban por fuera del ancho especificado, provocando desbordamientos en la grilla y descuadres visuales.
+
+2. Después de aplicar box-sizing: border-box:
+   - Ancho exterior total en pantalla = 300px exactos.
+   - Padding: 24px a cada lado (48px incluidos dentro)
+   - Border: 1px a cada lado (2px incluidos dentro)
+   - Caja de contenido calculada: 300px - 48px - 2px = 250px.
+   Explicación: El ancho del elemento ahora absorbe su relleno y su borde. La tarjeta conserva exactamente la dimensión asignada en el diseño, facilitando el cálculo de espacios y el diseño responsivo.
+
+--CIERRE DE BITÁCORA: RESUMEN GENERAL DE LOS MINIRETOS (LANZAMIENTO v1.0)--
+
+1. Resumen de lo construido en cada MiniReto:
+
+   • MiniReto 1 - Estructura Semántica y Arquitectura Web:
+     - Definición de regiones semánticas clave: <header>, <nav>, <main>, <section>, <article> y <footer>.
+     - Organización de rutas relativas limpias entre páginas (index.html, paginas/tarifas.html, paginas/reservas.html).
+     - Configuración de metadatos de viewport, charset y descripción SEO.
+
+   • MiniReto 2 - Componentes Interactivos, Tablas y Validación:
+     - Implementación de divulgación progresiva mediante <details> y <summary> para guías y preguntas frecuentes sin saturar la pantalla en dispositivos móviles.
+     - Tablas estructuradas con <caption>, <thead>, <tbody>, <th scope="col/row"> para máxima accesibilidad con lectores de pantalla.
+     - Formulario de reservas con validaciones nativas de HTML5 (type, required, min, pattern con expresiones regulares para teléfono y documento).
+
+   • MiniReto 3 - Sistema de Diseño, Variables CSS y Accesibilidad WCAG:
+     - Creación de la paleta 'Verde Ciclovía & Urbano' con verificación de ratios de contraste WCAG AA/AAA (> 7.5:1 para botones y encabezados).
+     - Centralización de tokens de diseño en :root con variables CSS (--color-*, --spacin-*, --font-*).
+     - Jerarquía tipográfica con Roboto y Merriweather.
+
+   • MiniReto 4 - Modelo de Caja (Box Model) y Layout Responsivo:
+     - Configuración de box-sizing: border-box en todos los elementos (*, *::before, *::after) para evitar desbordamientos.
+     - Limitación del ancho de contenido en rem (max-width: 75rem) con centrado automático horizontal (margin: 0 auto).
+     - Portada de inicio con altura mínima relativa al alto de la ventana (min-height: 65vh).
+     - Maquetación de servicios en tarjetas flexibles con imágenes en unidades porcentuales (width: 100%).
+
+   • MiniReto 5 - Posicionamiento Avanzado, Consistencia Global y Lanzamiento:
+     - Posicionamiento absoluto (.badge-nuevo) relativo a la tarjeta (.tarjeta-servicio) para destacar las bicicletas eléctricas sin desplazar el flujo del contenido.
+     - Posicionamiento fijo (.btn-whatsapp) en la esquina inferior derecha con enlace directo a WhatsApp en nueva pestaña y margen de seguridad en el pie de página para no tapar texto.
+     - Estandarización idéntica del encabezado, menú con buscador, botones y pie de página en las 3 páginas del sitio.
+     - Estilos de foco visible (:focus-visible) para navegación accesible por teclado.
+
+2. Aspectos a mejorar en futuras versiones:
+   - Implementar CSS Grid para layouts bidimensionales más avanzados en la galería de rutas y testimonios.
+   - Desarrollar interactividad con JavaScript (cálculo en vivo de cotización según horas y tipo de bici en el formulario).
+   - Agregar selector de tema dinámico (Modo Claro / Modo Oscuro) respetando las preferencias del sistema operativo (@media prefers-color-scheme).
+   - Conectar el formulario con una API o base de datos backend para almacenar reservas reales y enviar confirmaciones automáticas por correo.
+
+
+
 
