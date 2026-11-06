@@ -172,6 +172,150 @@ Resultados observados en el modelo de caja (DevTools):
    - Agregar selector de tema dinámico (Modo Claro / Modo Oscuro) respetando las preferencias del sistema operativo (@media prefers-color-scheme).
    - Conectar el formulario con una API o base de datos backend para almacenar reservas reales y enviar confirmaciones automáticas por correo.
 
+3. Reservas — CSS Grid:
+   - El formulario y la información de contacto/horarios se organizan en columnas 2fr y 1fr.
+   - La proporción da prioridad al formulario y mantiene la información de apoyo en una columna lateral; en móvil pasan a una sola columna.
 
+4. Fila de campos cortos — CSS Grid:
+   - Documento y teléfono comparten una fila con dos columnas iguales, con separación uniforme entre campos.
+   - En móvil se apilan para que las etiquetas y los campos sigan siendo cómodos de usar.
+
+5. Encabezado — Flexbox:
+   - Se conserva Flexbox en el menú para alinear logo, navegación y buscador en una fila y distribuir el espacio entre ellos.
+   - Los elementos pueden envolverse en pantallas pequeñas.
+
+6. Pie de página — Flexbox:
+   - El contenedor del pie centra el bloque de información y Flexbox distribuye sus textos en una fila cuando hay espacio.
+   - Los textos se envuelven y se apilan en pantallas estrechas.
+
+--BITÁCORA: RESPONSIVE MOBILE-FIRST Y VALIDACIÓN v1.5--
+
+1. Estilos base para celular:
+   - La portada, las tarjetas de servicios y la galería de rutas comienzan en una columna; las reservas y sus campos también se apilan.
+   - El logo con el nombre "Ruedas Libres" queda centrado arriba, seguido por el menú y el buscador centrados.
+   - Las imágenes tienen max-width: 100% y height: auto para no superar el ancho de su contenedor.
+
+2. Adaptaciones progresivas:
+   - Desde 768 px, la portada, la galería, las reservas, el encabezado y el pie recuperan una distribución de varias columnas o en fila.
+   - Desde 1200 px, la galería muestra tres tarjetas por fila y las tablas recuperan su tamaño de escritorio.
+   - Las consultas usan min-width para que la experiencia móvil sea el punto de partida y las mejoras se agreguen al crecer la pantalla.
+
+3. Problemas encontrados y solución:
+   - A 360 px, el mapa incrustado conservaba 600 px de ancho y provocaba desplazamiento horizontal. Se hizo fluido con width: 100%, max-width: 100% y una proporción 4:3.
+   - A 360 px, con el relleno de escritorio las tablas medían 389 px y 431 px frente a un área visible de 345 px. Se fijó el layout de tabla, se redujeron relleno y tipografía a 12 px y se habilitó el salto de palabras; la primera tabla ahora mide 281 px y ninguna celda ni página requiere scroll lateral.
+   - Las tarjetas, el formulario y el encabezado partían de varias columnas o una fila apretada en pantallas pequeñas. Se cambió el estilo base a una columna y navegación apilada; las filas y columnas se activan desde 768 px.
+   - Se añadió max-width: 100% a todas las imágenes para evitar que una imagen de tamaño intrínseco ensanche el documento.
+
+4. Verificación visual por viewport:
+   - 360 px: inicio, tarifas y reservas sin desbordamiento horizontal; menú apilado, tarjetas y formulario en una columna.
+   - 768 px: encabezado en fila, portada y reservas en columnas, y tarjetas en dos columnas.
+   - 1280 px: galería en tres columnas y reservas en proporción 2:1.
+   - Se comprobó que las imágenes no excedan su contenedor en los tres anchos mediante emulación de viewport en navegador.
+
+--BITÁCORA: CATÁLOGO DE DEMOSTRACIÓN CON BOOTSTRAP 5.3--
+
+1. Tiempo invertido:
+   - 1 minuto cronometrado entre la creación y la comprobación responsive del catálogo (10:37:34–10:38:34).
+
+2. Comparación de la grilla:
+   - No había en el repositorio un catálogo propio de siete bicicletas ni reglas CSS específicas para una flota. Como referencia, la galería propia de servicios/rutas resuelve la distribución con aproximadamente 6 declaraciones CSS: display, columnas y separación base, ajustes de columnas en dos breakpoints y margen superior.
+   - En el catálogo demostrativo la distribución usa las clases .row, .row-cols-1, .row-cols-sm-2, .row-cols-lg-3, .row-cols-xl-4 y .g-3; cada tarjeta se envuelve en .col. No se enlaza styles.css ni se añadieron reglas CSS propias.
+   - Bootstrap resolvió sin escribir CSS el cambio responsive de cantidad de columnas, los gutters, la estructura de tarjetas y sus estilos básicos.
+   - Se pierde control fino sobre breakpoints, separación y dimensiones de columnas, que pasan a depender de los valores y convenciones de Bootstrap. La página también depende de la disponibilidad del CDN.
+   - Nota técnica: aunque se configura usando las clases de la grilla Bootstrap, la implementación de la grilla de Bootstrap usa Flexbox internamente.
+
+3. Alcance y validación:
+   - No se encontró la flota original ni imágenes identificables de siete modelos. Para no presentarlos como inventario confirmado, los siete elementos se marcaron explícitamente como ejemplos de demostración y reutilizan las imágenes existentes; hay que reemplazarlos con los modelos y fotos reales antes de publicar como catálogo oficial.
+   - Se verificó el CDN de Bootstrap 5.3.8, que carguen las siete imágenes y que no exista scroll horizontal.
+   - En navegador, la grilla mostró 1 columna a 390 px, 2 a 576/991 px, 3 a 992/1199 px y 4 a 1200/1440 px.
+
+--BITÁCORA: PROTOTIPO DE RUTA NOCTURNA CON TAILWIND CSS (UTILITY-FIRST)--
+
+1. Construcción del botón en la semana 2 con Bootstrap:
+   - En la semana 2 (con Bootstrap 5.3), los botones se implementaron a partir de clases de componentes predefinidos de alto nivel (como .btn en combinación con modificadores de variante visual como .btn-success o .btn-primary) o utilidades de Bootstrap (como .d-inline-block .rounded .bg-success .text-decoration-none .fw-bold .px-4 .py-2).
+   - En el enfoque basado en componentes de Bootstrap, la clase .btn agrupa y preconfigura una gran cantidad de estilos CSS de forma fija: display inline-block, line-height, text-align, text-decoration, border, border-radius, padding base, cursor pointer y transiciones para estados de interacción (hover, focus, active). Las clases modificadoras (.btn-success) simplemente aplican los valores de color predefinidos en la paleta del framework.
+   - El resultado es muy rápido de maquetar pero viene condicionado por los patrones y decisiones visuales estrictas que Bootstrap define de fábrica.
+
+2. Construcción del botón "Inscríbete" hoy con Tailwind CSS:
+   - En Tailwind CSS no existen componentes prefabricados como .btn por defecto. El enlace <a> con texto "Inscríbete" se construyó desde cero combinando clases de utilidad atómicas que mapean directamente a propiedades de CSS puro:
+     • Comportamiento de visualización: 'inline-block' para permitir padding y dimensiones respetando el flujo de texto.
+     • Espaciado interno (Padding): 'px-8 py-3.5' para definir el área táctil e interactiva del botón.
+     • Tipografía y tamaño: 'text-lg font-bold' para darle jerarquía visual y máxima legibilidad como llamado a la acción (CTA).
+     • Paleta de color y contraste: 'bg-emerald-500 text-slate-950', garantizando un contraste óptimo (cumplimiento WCAG) y coherencia con la identidad de marca de Ruedas Libres sobre fondo oscuro.
+     • Bordes y redondeado: 'rounded-lg' para suavizar las esquinas.
+     • Estados interactivos y sombras: 'hover:bg-emerald-400', 'transition-all', 'shadow-lg' y 'hover:shadow-emerald-500/25' para dar retroalimentación inmediata al pasar el cursor o enfocar el elemento.
+   - Todo el botón se definió exclusivamente en el atributo class del enlace, sin usar etiquetas <style>, sin atributos style="" en línea y sin requerir clases de Bootstrap ni reglas CSS adicionales.
+
+3. Diferencia clave entre un framework de componentes y uno utility-first:
+   - Framework de componentes (Bootstrap):
+     Ofrece abstracciones de alto nivel orientadas a componentes listos para usar (.card, .btn, .navbar, .modal). Facilita armar interfaces estándar en minutos, pero restringe la originalidad del diseño y suele provocar que múltiples proyectos se vean visualmente homogéneos. Para personalizarlo fuera de sus variables base, se requiere sobreescribir CSS externo con mayor especificidad o lidiar con selectores complejos.
+   - Framework Utility-First (Tailwind CSS):
+     Ofrece abstracciones de bajo nivel mediante clases utilitarias atómicas de propósito único (espaciado, colores, tipografía, flexbox/grid, tamaños). No impone ningún componente ni estética prediseñada; otorga libertad total para diseñar interfaces a medida directamente en el HTML con un sistema de tokens de diseño consistente, eliminando la necesidad de inventar nombres de clases BEM, el código CSS huérfano y los conflictos de especificidad.
+
+--BITÁCORA: COMPILACIÓN CON TAILWIND CLI, ANÁLISIS DE OUTPUT.CSS Y BOTONES ACCESIBLES--
+
+1. Experimento de búsqueda en src/output.css:
+   - Clase utilizada en el proyecto (ej: .bg-emerald-500):
+     Aparece generada en la línea 722 de output.css con su regla CSS completa:
+     .bg-emerald-500 {
+       --tw-bg-opacity: 1;
+       background-color: rgb(16 185 129 / var(--tw-bg-opacity, 1));
+     }
+   - Clase no utilizada en el proyecto (ej: bg-pink-500):
+     No aparece en ninguna parte del archivo output.css (0 resultados de búsqueda).
+   - ¿Por qué ocurre esto?
+     Tailwind CSS funciona con un compilador Just-In-Time (JIT) y un proceso de "purga" (Tree-shaking). En lugar de compilar miles de clases posibles (lo que crearía un archivo CSS de varios megabytes), el motor escanea los archivos declarados en tailwind.config.js (content: ["./*.html", ...]) y genera exclusivamente el CSS de las utilidades que detecta en el marcado HTML. Si una clase no se usa, nunca se compila ni se envía al navegador, garantizando un peso mínimo para producción.
+
+2. Tres variantes de botones implementadas (nocturna/index.html):
+   - Variante 1 (Primaria - Sólida): .bg-emerald-500 con texto oscuro, esquinas redondeadas y sombra para la acción principal ("Inscríbete").
+   - Variante 2 (Secundaria - Outline / Borde): border-2 border-emerald-500 con texto esmeralda y hover sutil semitransparente para acciones secundarias ("Ver recorrido").
+   - Variante 3 (Terciaria - Ghost / Sutil): Fondo transparente, texto gris claro y hover suave para navegación complementaria ("Volver al inicio").
+
+3. Accesibilidad y estados de foco visible por teclado:
+   - Al remover el contorno por defecto del navegador con 'focus:outline-none' (que puede verse tosco e inconsistente entre navegadores), se restauró inmediatamente la accesibilidad por teclado implementando un anillo visible mediante 'focus:ring-2' y la familia de utilidades ring de Tailwind.
+   - Para maximizar el contraste sobre el fondo oscuro (#020617), se configuró 'focus:ring-offset-2' y 'focus:ring-offset-slate-950', generando un espacio de separación limpio entre el botón y el anillo iluminado ('focus:ring-emerald-400' / 'focus:ring-slate-400').
+   - Al navegar con la tecla Tab, los 3 botones muestran una indicación de foco inequívoca, cumpliendo con los estándares de accesibilidad WCAG 2.1 (Criterio 2.4.7: Focus Visible).
+
+--BITÁCORA: SECCIÓN DE RUTAS Y TARJETAS APILADAS CON TAILWIND CSS--
+
+1. Estructura y maquetación de las cards de rutas:
+   - Se creó la sección "Rutas" (#rutas) conteniendo tres tarjetas de rutas nocturnas dispuestas verticalmente una debajo de otra (flex flex-col gap-10 max-w-4xl mx-auto) a la espera de la grilla responsive.
+   - Cada tarjeta cuenta con una imagen de cabecera con alto uniforme y ancho completo (w-full h-56 md:h-64 object-cover).
+   - Se incluyó el botón principal interactivo del MiniReto 2 con anillo de foco visible para navegación por teclado.
+
+2. Accesibilidad e indicación de nivel (WCAG 1.4.1):
+   - Para no depender exclusivamente del color para transmitir información, las etiquetas de dificultad incorporan tanto código de color como texto explícito:
+     • Nivel Fácil: Verde esmeralda (text-emerald-400 bg-emerald-950/90 border-emerald-500/40) + texto "Nivel: Principiante / Fácil".
+     • Nivel Intermedio: Ámbar cálido (text-amber-400 bg-amber-950/90 border-amber-500/40) + texto "Nivel: Intermedio / Medio".
+     • Nivel Avanzado: Rosa/Rojo intenso (text-rose-400 bg-rose-950/90 border-rose-500/40) + texto "Nivel: Avanzado / Alta Intensidad".
+
+3. Jerarquía tipográfica y efectos sin desplazamiento de diseño (Layout Shift):
+   - Lista de especificaciones (distancia, duración, punto de encuentro): se utilizó contraste de escala y color con etiquetas en miniatura secundaria (text-xs uppercase font-semibold text-slate-400) y valores en negrita resaltada (text-base md:text-lg font-bold text-slate-100).
+   - Prevención de Cumulative Layout Shift (CLS): el efecto hover en las cards utiliza un borde preexistente (border border-slate-800) cuyo color muta en hover (hover:border-emerald-500/60, hover:border-amber-500/60, etc.) combinado con una elevación de sombra difusa (shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300). Esto garantiza una interacción fluida sin alterar las dimensiones ni provocar saltos visuales en el contenido.
+
+--BITÁCORA: SISTEMA DE COMPONENTES, REGLAS DEL KIT Y ACCESIBILIDAD (UI KIT)--
+
+1. Definición y aplicación de las "Reglas del Kit":
+   - Radios de borde (Border Radius):
+     • rounded-lg (8px): aplicado uniformemente a botones, cajas de alerta y campos de formulario (inputs), creando una consistencia geométrica en los componentes interactivos y de aviso.
+     • rounded-2xl (16px): reservado para contenedores de mayor jerarquía (tarjetas de ruta y tarjetas de formulario).
+     • rounded-full: utilizado exclusivamente para badges y píldoras de estado/nivel.
+   - Escala de espaciado (Spacing System):
+     • Inputs y botones: py-3 px-4 a py-3 px-6 para cumplir con las dimensiones recomendadas de áreas táctiles accesibles (touch targets > 44px).
+     • Alertas: p-4 estándar con borde lateral border-l-4 para énfasis visual.
+     • Cards y formularios: p-6 a md:p-8 de relleno interno.
+     • Espaciado vertical entre secciones: space-y-16 en el contenedor principal y space-y-6 en formularios.
+   - Tokens de color y superficies:
+     • Fondo global: #020617 (bg-slate-950).
+     • Superficies elevadas: #0f172a (bg-slate-900).
+     • Primario y éxito: Emerald (#10b981) en fondos, bordes y foco interactivo.
+     • Información: Sky (#0284c7).
+     • Advertencia: Amber (#f59e0b).
+     • Bordes base: border-slate-800 y border-slate-700.
+
+2. Accesibilidad en alertas y formularios (WCAG):
+   - Alertas semánticas: la alerta de éxito incorpora role="status" para que lectores de pantalla anuncien el evento de confirmación de manera educada (aria-live polite) sin interrumpir bruscamente la navegación. La de advertencia usa role="alert".
+   - Formularios accesibles: cada input cuenta con su etiqueta <label> explícita vinculada por for e id, placeholders descriptivos y párrafos de ayuda vinculados inequívocamente mediante aria-describedby.
+   - Foco visible garantizado: todos los elementos interactivos suprimen el outline genérico con focus:outline-none e implementan un anillo de alto contraste (focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900) para asegurar la visibilidad del foco en navegación por teclado.
 
 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta Nocturna | Ruedas Libres</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-center font-sans antialiased">
+
+    <!-- Sección Principal del Prototipo -->
+    <main class="w-full max-w-6xl mx-auto px-6 py-12 md:py-20">
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Columna de Información y Llamado a la Acción -->
+            <div>
+                <!-- Badge del Evento -->
+                <span
+                    class="inline-block px-3 py-1 text-sm font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 rounded-full mb-4">
+                    Edición Especial · Tour Nocturno
+                </span>
+
+                <!-- Único Título Principal -->
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+                    Ruta Nocturna: <span class="text-emerald-400">Luces y Miradores</span>
+                </h1>
+
+                <!-- Descripción Principal -->
+                <p class="text-lg md:text-xl text-slate-300 leading-relaxed mb-8">
+                    Vive una experiencia inolvidable pedaleando bajo el cielo nocturno de Medellín. Descubre la ciudad
+                    iluminada, conquista miradores con vistas panorámicas y comparte con una comunidad apasionada por
+                    las
+                    dos ruedas en un recorrido guiado, seguro y lleno de energía.
+                </p>
+
+                <!-- Ficha de Datos Clave de la Experiencia -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+                        <span class="block text-xs uppercase text-slate-400 font-semibold mb-1">Horario</span>
+                        <p class="text-base font-bold text-white">6:30 p. m.</p>
+                        <span class="text-xs text-slate-400">Martes a Sábado</span>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+                        <span class="block text-xs uppercase text-slate-400 font-semibold mb-1">Duración</span>
+                        <p class="text-base font-bold text-white">3 Horas</p>
+                        <span class="text-xs text-slate-400">Dificultad Media</span>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 col-span-2 sm:col-span-1">
+                        <span class="block text-xs uppercase text-slate-400 font-semibold mb-1">Tarifa</span>
+                        <p class="text-base font-bold text-emerald-400">$75.000 COP</p>
+                        <span class="text-xs text-slate-400">Por persona</span>
+                    </div>
+                </div>
+
+                <!-- Elementos Incluidos en la Ruta -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Tu experiencia
+                        incluye:
+                    </p>
+                    <ul class="text-sm text-slate-300 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <span class="text-emerald-400 font-bold">✓</span> Bicicleta ajustada (opción urbana, montaña
+                            o
+                            eléctrica)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-emerald-400 font-bold">✓</span> Casco certificado y sistema de luces LED
+                            nocturnas
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-emerald-400 font-bold">✓</span> Chaleco reflectivo, hidratación, guía
+                            experto
+                            y póliza
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Enlace "Inscríbete" con apariencia de botón mediante utilidades -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#inscribete"
+                        class="inline-block bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-lg px-8 py-3.5 rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all text-center">
+                        Inscríbete
+                    </a>
+                    <a href="../index.html"
+                        class="inline-block text-slate-400 hover:text-white font-medium text-base px-5 py-3 transition-colors text-center">
+                        ← Volver al Inicio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Visual del Recorrido -->
+            <div class="flex flex-col items-center justify-center">
+                <div class="relative w-full max-w-md lg:max-w-none">
+                    <img src="../img/tours.jpg" alt="Ciclistas en la ruta nocturna por Medellín"
+                        class="rounded-2xl shadow-2xl border border-slate-800 w-full object-cover h-80 md:h-96 lg:h-[450px]">
+                    <div
+                        class="mt-4 p-4 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase text-slate-400 font-semibold">Punto de salida</p>
+                            <p class="text-sm font-bold text-white">Sede Central Ruedas Libres</p>
+                            <p class="text-xs text-slate-400">Medellín, Colombia</p>
+                        </div>
+                        <span
+                            class="px-3 py-1 text-xs font-semibold text-amber-400 bg-amber-950/60 border border-amber-500/30 rounded-full">
+                            Cupos Limitados
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+
+</html>

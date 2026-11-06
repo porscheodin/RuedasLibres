@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta Nocturna | Ruedas Libres</title>
+    <!-- Hoja de estilos compilada por la CLI de Tailwind -->
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-center font-sans antialiased">
+
+    <!-- Sección Principal del Prototipo -->
+    <main class="w-full max-w-6xl mx-auto px-6 py-12 md:py-20">
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Columna de Información y Llamado a la Acción -->
+            <div>
+                <!-- Badge del Evento -->
+                <span
+                    class="inline-block px-3 py-1 text-sm font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 rounded-full mb-4">
+                    Edición Especial · Tour Nocturno
+                </span>
+
+                <!-- Único Título Principal -->
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+                    Ruta Nocturna: <span class="text-emerald-400">Luces y Miradores</span>
+                </h1>
+
+                <!-- Descripción Principal -->
+                <p class="text-lg md:text-xl text-slate-300 leading-relaxed mb-8">
+                    Vive una experiencia inolvidable pedaleando bajo el cielo nocturno de Medellín. Descubre la ciudad
+                    iluminada, conquista miradores con vistas panorámicas y comparte con una comunidad apasionada por
+                    las
+                    dos ruedas en un recorrido guiado, seguro y lleno de energía.
+                </p>
+
+                <!-- Ficha de Datos Clave de la Experiencia -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+                        <span class="block text-xs uppercase text-slate-400 font-semibold mb-1">Horario</span>
+                        <p class="text-base font-bold text-white">6:30 p. m.</p>
+                        <span class="text-xs text-slate-400">Martes a Sábado</span>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+                        <span class="block text-xs uppercase text-slate-400 font-semibold mb-1">Duración</span>
+                        <p class="text-base font-bold text-white">3 Horas</p>
+                        <span class="text-xs text-slate-400">Dificultad Media</span>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 col-span-2 sm:col-span-1">
+                        <span class="block text-xs uppercase text-slate-400 font-semibold mb-1">Tarifa</span>
+                        <p class="text-base font-bold text-emerald-400">$75.000 COP</p>
+                        <span class="text-xs text-slate-400">Por persona</span>
+                    </div>
+                </div>
+
+                <!-- Elementos Incluidos en la Ruta -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Tu experiencia
+                        incluye:</p>
+                    <ul class="text-sm text-slate-300 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <span class="text-emerald-400 font-bold">✓</span> Bicicleta ajustada (opción urbana, montaña
+                            o eléctrica)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-emerald-400 font-bold">✓</span> Casco certificado y sistema de luces LED
+                            nocturnas
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-emerald-400 font-bold">✓</span> Chaleco reflectivo, hidratación, guía
+                            experto y póliza
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tres Variantes de Botón con Foco Visible Accesible -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <!-- Variante 1: Primaria (Sólido) -->
+                    <a href="#inscribete"
+                        class="inline-block bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base md:text-lg px-8 py-3.5 rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all text-center focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950">
+                        Inscríbete
+                    </a>
+
+                    <!-- Variante 2: Secundaria (Outline / Contorno) -->
+                    <a href="#rutas"
+                        class="inline-block border-2 border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 font-bold text-base md:text-lg px-7 py-3.5 rounded-lg transition-all text-center focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950">
+                        Ver rutas
+                    </a>
+
+                    <!-- Variante 3: Terciaria (Ghost / Sutil) -->
+                    <a href="../index.html"
+                        class="inline-block text-slate-400 hover:text-white hover:bg-slate-900 font-medium text-base px-5 py-3.5 rounded-lg transition-all text-center focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950">
+                        ← Volver al inicio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Visual del Recorrido -->
+            <div class="flex flex-col items-center justify-center">
+                <div class="relative w-full max-w-md lg:max-w-none">
+                    <img src="../img/tours.jpg" alt="Ciclistas en la ruta nocturna por Medellín"
+                        class="rounded-2xl shadow-2xl border border-slate-800 w-full object-cover h-80 md:h-96 lg:h-[450px]">
+                    <div
+                        class="mt-4 p-4 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase text-slate-400 font-semibold">Punto de salida</p>
+                            <p class="text-sm font-bold text-white">Sede Central Ruedas Libres</p>
+                            <p class="text-xs text-slate-400">Medellín, Colombia</p>
+                        </div>
+                        <span
+                            class="px-3 py-1 text-xs font-semibold text-amber-400 bg-amber-950/60 border border-amber-500/30 rounded-full">
+                            Cupos Limitados
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Sección Rutas -->
+        <section id="rutas" class="mt-24 pt-8 border-t border-slate-800">
+            <!-- Encabezado de la Sección -->
+            <div class="text-center md:text-left mb-12">
+                <span
+                    class="inline-block px-3 py-1 text-xs font-semibold text-emerald-400 bg-emerald-950/70 border border-emerald-500/30 rounded-full uppercase tracking-wider mb-3">
+                    Catálogo de Rutas
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+                    Nuestras Rutas Nocturnas
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl">
+                    Explora los diferentes trayectos nocturnos por Medellín. Cada ruta cuenta con acompañamiento
+                    profesional y soporte técnico.
+                </p>
+            </div>
+
+            <!-- Contenedor de Cards: Una debajo de otra -->
+            <div class="flex flex-col gap-10 max-w-4xl mx-auto">
+
+                <!-- Card 1: Nivel Fácil / Principiante -->
+                <article
+                    class="bg-slate-900 border border-slate-800 hover:border-emerald-500/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300">
+                    <!-- Imagen de alto uniforme y ancho completo -->
+                    <img src="../img/alquiler.jpg" alt="Ruta Nocturna Parques del Río y Ciudad del Río"
+                        class="w-full h-56 md:h-64 object-cover">
+                    <div class="p-6 md:p-8">
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                            <!-- Etiqueta de nivel con color y texto explícito -->
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold text-emerald-400 bg-emerald-950/90 border border-emerald-500/40 rounded-full">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400" aria-hidden="true"></span>
+                                Nivel: Principiante / Fácil
+                            </span>
+                            <span class="text-xs text-slate-400 font-medium">Salida: 6:30 p. m.</span>
+                        </div>
+
+                        <!-- Nombre de la ruta -->
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                            Ruta Panorámica Parques del Río
+                        </h3>
+
+                        <!-- Lista de datos con jerarquía tipográfica -->
+                        <ul class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4 my-4 border-y border-slate-800/80">
+                            <li class="flex flex-col">
+                                <span
+                                    class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Distancia</span>
+                                <strong class="text-base md:text-lg font-bold text-slate-100 mt-1">12 km</strong>
+                            </li>
+                            <li class="flex flex-col">
+                                <span
+                                    class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Duración</span>
+                                <strong class="text-base md:text-lg font-bold text-slate-100 mt-1">2 Horas</strong>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Punto de
+                                    encuentro</span>
+                                <strong class="text-base md:text-lg font-bold text-slate-100 mt-1">Parques del
+                                    Río</strong>
+                            </li>
+                        </ul>
+
+                        <!-- Fila de Precio destacado y Botón Principal del MiniReto 2 -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6">
+                            <div>
+                                <span class="block text-xs uppercase font-semibold text-slate-400">Precio por
+                                    persona</span>
+                                <p class="text-2xl md:text-3xl font-extrabold text-emerald-400">$55.000 COP</p>
+                            </div>
+                            <a href="#inscribete"
+                                class="inline-block bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base px-8 py-3.5 rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all text-center focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950">
+                                Inscríbete
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Nivel Intermedio / Medio -->
+                <article
+                    class="bg-slate-900 border border-slate-800 hover:border-amber-500/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300">
+                    <!-- Imagen de alto uniforme y ancho completo -->
+                    <img src="../img/tours.jpg" alt="Ruta Tour Centro Histórico y Miradores"
+                        class="w-full h-56 md:h-64 object-cover">
+                    <div class="p-6 md:p-8">
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                            <!-- Etiqueta de nivel con color y texto explícito -->
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold text-amber-400 bg-amber-950/90 border border-amber-500/40 rounded-full">
+                                <span class="w-2 h-2 rounded-full bg-amber-400" aria-hidden="true"></span>
+                                Nivel: Intermedio / Medio
+                            </span>
+                            <span class="text-xs text-slate-400 font-medium">Salida: 6:30 p. m.</span>
+                        </div>
+
+                        <!-- Nombre de la ruta -->
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                            Tour Nocturno de Luces y Miradores
+                        </h3>
+
+                        <!-- Lista de datos con jerarquía tipográfica -->
+                        <ul class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4 my-4 border-y border-slate-800/80">
+                            <li class="flex flex-col">
+                                <span
+                                    class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Distancia</span>
+                                <strong class="text-base md:text-lg font-bold text-slate-100 mt-1">18 km</strong>
+                            </li>
+                            <li class="flex flex-col">
+                                <span
+                                    class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Duración</span>
+                                <strong class="text-base md:text-lg font-bold text-slate-100 mt-1">3 Horas</strong>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Punto de
+                                    encuentro</span>
+                                <strong class="text-base md:text-lg font-bold text-slate-100 mt-1">Sede Central Ruedas
+                                    Libres</strong>
+                            </li>
+                        </ul>
+
+                        <!-- Fila de Precio destacado y Botón Principal del MiniReto 2 -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6">
+                            <div>
+                                <span class="block text-xs uppercase font-semibold text-slate-400">Precio por
+                                    persona</span>
+                                <p class="text-2xl md:text-3xl font-extrabold text-emerald-400">$75.000 COP</p>
+                            </div>
+                            <a href="#inscribete"
+                                class="inline-block bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base px-8 py-3.5 rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all text-center focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950">
+                                Inscríbete
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Nivel Avanzado / Alto -->
+                <article
+                    class="bg-slate-900 border border-slate-800 hover:border-rose-500/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-rose-500/10 transition-all duration-300">
+                    <!-- Imagen de alto uniforme y ancho completo -->
+                    <img src="../img/electricas.jpg" alt="Ruta Desafío Cerro El Volador"
+                        class="w-full h-56 md:h-64 object-cover">
+                    <div class="p-6 md:p-8">
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                            <!-- Etiqueta de nivel con color y texto explícito -->
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold text-rose-400 bg-rose-950/90 border border-rose-500/40 rounded-full">
+                                <span class="w-2 h-2 rounded-full bg-rose-400" aria-hidden="true"></span>
+                                Nivel: Avanzado / Alta Intensidad
+                            </span>
+                            <span class="text-xs text-slate-400 font-medium">Salida: 7:00 p. m.</span>
+                        </div>
+
+                        <!-- Nombre de la ruta -->
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                            Desafío Cerro El Volador Nocturno
+                        </h3>
+
+                        <!-- Lista de datos con jerarquía tipográfica -->
+                        <ul class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4 my-4 border-y border-slate-800/80">
+                            <li class="flex flex-col">
+                                <span
+                                    class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Distancia</span>
+                                <strong class="text-base md:text-lg font-bold text-slate-100 mt-1">24 km</strong>
+                            </li>
+                            <li class="flex flex-col">
+                                <span
+                                    class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Duración</span>
+                                <strong class="text-base md:text-lg font-bold text-slate-100 mt-1">4 Horas</strong>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Punto de
+                                    encuentro</span>
+                                <strong class="text-base md:text-lg font-bold text-slate-100 mt-1">Parque San
+                                    Antonio</strong>
+                            </li>
+                        </ul>
+
+                        <!-- Fila de Precio destacado y Botón Principal del MiniReto 2 -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6">
+                            <div>
+                                <span class="block text-xs uppercase font-semibold text-slate-400">Precio por
+                                    persona</span>
+                                <p class="text-2xl md:text-3xl font-extrabold text-emerald-400">$85.000 COP</p>
+                            </div>
+                            <a href="#inscribete"
+                                class="inline-block bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base px-8 py-3.5 rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all text-center focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950">
+                                Inscríbete
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
