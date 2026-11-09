@@ -318,4 +318,25 @@ Resultados observados en el modelo de caja (DevTools):
    - Formularios accesibles: cada input cuenta con su etiqueta <label> explícita vinculada por for e id, placeholders descriptivos y párrafos de ayuda vinculados inequívocamente mediante aria-describedby.
    - Foco visible garantizado: todos los elementos interactivos suprimen el outline genérico con focus:outline-none e implementan un anillo de alto contraste (focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900) para asegurar la visibilidad del foco en navegación por teclado.
 
+--BITÁCORA: MAQUETACIÓN LANDING, ANCLAS Y DECISIÓN GRID VS FLEX--
+
+1. Estructura semántica y contenedor estandarizado:
+   - Se estructuró la landing completa utilizando elementos semánticos de HTML5 (<header>, <main>, <section id="..."> y <footer>).
+   - Se aplicó la regla del contenedor unificado 'max-w-6xl mx-auto px-6' de forma consistente en el encabezado, en cada una de las cuatro secciones y en el pie de página, garantizando márgenes simétricos y un centrado perfecto sin desbordamientos.
+   - El encabezado implementa Flexbox ('flex items-center justify-between') alineando verticalmente el logotipo a la izquierda y la lista de anclas de navegación (#inicio, #rutas, #como-funciona, #inscripcion) junto al botón de llamado a la acción a la derecha.
+
+2. Cuadrícula de rutas (3 columnas):
+   - Se distribuyeron las tres tarjetas de rutas en una cuadrícula de tres columnas ('grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8') adaptativa para móvil, tablet y escritorio.
+
+3. Justificación técnica de Grid para "¿Cómo funciona?":
+   - Decisión: Se eligió CSS Grid ('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6') para los cuatro pasos.
+   - Justificación: Los cuatro pasos representan una progresión lineal secuencial (01 a 04) donde es indispensable que cada paso tenga exactamente el mismo ancho (25% en pantallas de escritorio) y mantenga alineación estricta en filas y columnas sin deformaciones. Flexbox distribuiría el espacio de forma más flexible o desigual si el contenido de texto varía entre pasos; Grid, en cambio, asegura una retícula rígida, predecible y responsiva (4 columnas en lg, 2 en sm/md y 1 en móvil).
+
+4. Organización del pie de página (Footer con Flex):
+   - Se estructuró en tres bloques autónomos (identidad/misión, navegación rápida y punto de contacto) mediante Flexbox ('flex flex-col md:flex-row justify-between items-start gap-12'), permitiendo un flujo natural que se apila verticalmente en móviles y se distribuye equitativamente en pantallas amplias.
+
+5. Reutilización de componentes:
+   - Se copiaron íntegramente los botones, tarjetas, alertas y formulario desde 'componentes.html', preservando los tokens de diseño (radios rounded-lg / rounded-2xl, espaciados y anillos de foco accesible).
+
+
 
