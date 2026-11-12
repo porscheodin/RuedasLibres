@@ -9,7 +9,7 @@ Sitio estático para conocer y reservar bicicletas y recorridos guiados en Medel
 - Landing nocturna: [Rueda Nocturna](https://porscheodin.github.io/RuedasLibres/nocturna/)
 - Formulario de reserva: [Reservas](https://porscheodin.github.io/RuedasLibres/paginas/reservas.html)
 
-**Estado de publicación:** verificado en GitHub Pages. El workflow manual #2 terminó correctamente en 23 s para el commit `1b1cacf`. Para volver a publicar, abre **Actions → Deploy static site to GitHub Pages → Run workflow**.
+**Estado de publicación:** verificado en GitHub Pages. El workflow manual #3 terminó correctamente en 20 s para el commit `a9aaa7e`; se comprobaron la portada, Reservas, la landing nocturna y el kit de componentes. Para volver a publicar, abre **Actions → Deploy static site to GitHub Pages → Run workflow**.
 
 ## Páginas
 
