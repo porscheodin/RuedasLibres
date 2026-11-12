@@ -364,5 +364,23 @@ Resultados observados en el modelo de caja (DevTools):
 4. Recomendación para Rueda Libre:
    - Mantener Tailwind en la experiencia nocturna: la marca requiere una paleta y temas propios, el HTML actual no necesita el JavaScript de Bootstrap y el CSS generado quedó acotado al uso del proyecto. La decisión está respaldada por la implementación y las mediciones de referencia, no por una comparación directa con una v2.0 que no estuvo disponible.
 
+--BITÁCORA: FORMULARIO DE INSCRIPCIÓN Y VALIDACIÓN NATIVA--
+
+1. Estructura y reglas:
+   - La sección de inscripción agrupa los datos en dos fieldset con legend: 'Datos personales' (nombre y correo) y 'Datos de la reserva' (celular y acompañantes).
+   - Cada control tiene una etiqueta asociada mediante for/id. Nombre usa text, correo email, celular tel con teclado numérico y acompañantes number.
+   - Todos los controles son obligatorios. El nombre tiene minlength=3; el celular usa pattern='3[0-9]{9}', minlength y maxlength de 10; acompañantes tiene min=0, max=3 y step=1.
+   - Los grupos usan una columna en móvil y dos columnas desde md. Los campos conservan los colores, bordes, foco y variantes dark: del kit.
+
+2. Pruebas en navegador:
+   - Formulario vacío: checkValidity() fue falso y los cuatro controles informaron valueMissing.
+   - Datos inválidos escritos con teclado: nombre 'Al' produjo tooShort; correo 'ana@' produjo typeMismatch; celular '2123456789' produjo patternMismatch; acompañantes '4' produjo rangeOverflow. El formulario no fue válido.
+   - Datos completos escritos con teclado: nombre 'Ana Maria', correo 'ana@example.com', celular '3001234567' y 3 acompañantes; checkValidity() fue verdadero y Enter alcanzó el botón de envío. No hay backend; el submit existente se cancela para no enviar datos ni navegar.
+   - Navegación con teclado: se recorrieron los enlaces hasta el formulario y luego sus campos en orden con Tab; se usó Enter para las pruebas sin usar el mouse.
+   - Responsive y tema: los fieldset calcularon una columna a 390 px y dos a 768 px. En prefers-color-scheme: dark, el campo tomó el fondo Azul Noche.
+
+3. Cronómetro:
+   - Se inició el timebox de 40 minutos el 2026-11-12 a las 10:52:01 (-05:00). Las pruebas finalizaron a las 10:54:59 (-05:00): tiempo real registrado, 2 minutos 58 segundos (178 segundos).
+
 
 

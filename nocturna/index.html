@@ -365,38 +365,73 @@
                         </p>
                     </div>
 
-                    <!-- Alerta copiada idéntica de componentes.html -->
-                    <div class="p-4 bg-verde-ruta/10 border-l-4 border-verde-ruta border border-azul-noche/15 rounded-lg dark:bg-azul-noche dark:border-verde-ruta dark:border-blanco-hielo/10">
-                        <h4 class="flex items-center gap-2 text-base font-bold text-azul-noche dark:text-verde-ruta">
-                            <span>ℹ️</span> Información importante
-                        </h4>
-                        <p class="mt-1 text-sm text-azul-noche/80 dark:text-blanco-hielo/80">
-                            Recuerda presentarte con 15 minutos de anticipación en el punto de encuentro para la inspección de luces y ajuste del casco.
-                        </p>
-                    </div>
+                    <form class="max-w-lg space-y-6 p-6 bg-azul-superficie/5 border border-azul-noche/15 rounded-2xl dark:bg-azul-superficie dark:border-blanco-hielo/10 md:p-8"
+                        onsubmit="return false;">
+                        <fieldset class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                            <legend class="col-span-full mb-1 text-lg font-bold font-montserrat text-azul-noche dark:text-blanco-hielo">
+                                Datos personales
+                            </legend>
 
-                    <!-- Formulario copiado idéntico de componentes.html -->
-                    <form class="space-y-6 p-6 bg-azul-superficie/5 border border-azul-noche/15 rounded-2xl dark:bg-azul-superficie dark:border-blanco-hielo/10 md:p-8" onsubmit="return false;">
-                        <div class="flex flex-col">
-                            <label for="campo-correo" class="mb-2 text-sm font-semibold text-azul-noche dark:text-blanco-hielo">
-                                Correo electrónico <span class="text-azul-noche dark:text-verde-ruta">*</span>
-                            </label>
-                            <input type="email" id="campo-correo" name="correo" placeholder="ejemplo@correo.com"
-                                aria-describedby="ayuda-correo" required
-                                class="w-full px-4 py-3 text-sm bg-blanco-hielo border border-azul-noche/45 rounded-lg text-azul-noche transition-colors dark:bg-azul-noche dark:border-blanco-hielo/40 dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 md:text-base focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie" />
-                            <p id="ayuda-correo" class="mt-1.5 text-xs text-azul-noche/70 dark:text-blanco-hielo/70">
-                                Usaremos tu correo únicamente para enviarte la confirmación y la guía de seguridad.
-                            </p>
-                        </div>
+                            <div class="flex flex-col">
+                                <label for="campo-nombre" class="mb-2 text-sm font-semibold text-azul-noche dark:text-blanco-hielo">
+                                    Nombre completo <span class="text-azul-noche dark:text-verde-ruta" aria-hidden="true">*</span>
+                                </label>
+                                <input type="text" id="campo-nombre" name="nombre" autocomplete="name" minlength="3" required
+                                    aria-describedby="ayuda-nombre"
+                                    class="w-full px-4 py-3 text-sm bg-blanco-hielo border border-azul-noche/45 rounded-lg text-azul-noche transition-colors dark:bg-azul-noche dark:border-blanco-hielo/40 dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 md:text-base focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie" />
+                                <p id="ayuda-nombre" class="mt-1.5 text-xs text-azul-noche/70 dark:text-blanco-hielo/70">
+                                    Escribe al menos 3 caracteres.
+                                </p>
+                            </div>
 
-                        <div class="flex flex-col">
-                            <label for="campo-celular" class="mb-2 text-sm font-semibold text-azul-noche dark:text-blanco-hielo">
-                                Número de celular (WhatsApp) <span class="text-azul-noche dark:text-verde-ruta">*</span>
-                            </label>
-                            <input type="tel" id="campo-celular" name="celular" placeholder="300 123 4567"
-                                aria-describedby="ayuda-celular" required
-                                class="w-full px-4 py-3 text-sm bg-blanco-hielo border border-azul-noche/45 rounded-lg text-azul-noche transition-colors dark:bg-azul-noche dark:border-blanco-hielo/40 dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 md:text-base focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie" />
-                            <p id="ayuda-celular" class="mt-1.5 text-xs text-azul-noche/70 dark:text-blanco-hielo/70">
+                            <div class="flex flex-col">
+                                <label for="campo-correo" class="mb-2 text-sm font-semibold text-azul-noche dark:text-blanco-hielo">
+                                    Correo electrónico <span class="text-azul-noche dark:text-verde-ruta" aria-hidden="true">*</span>
+                                </label>
+                                <input type="email" id="campo-correo" name="correo" autocomplete="email" placeholder="ejemplo@correo.com" required
+                                    aria-describedby="ayuda-correo"
+                                    class="w-full px-4 py-3 text-sm bg-blanco-hielo border border-azul-noche/45 rounded-lg text-azul-noche transition-colors dark:bg-azul-noche dark:border-blanco-hielo/40 dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 md:text-base focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie" />
+                                <p id="ayuda-correo" class="mt-1.5 text-xs text-azul-noche/70 dark:text-blanco-hielo/70">
+                                    Usaremos tu correo para enviarte los detalles de la rodada.
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                            <legend class="col-span-full mb-1 text-lg font-bold font-montserrat text-azul-noche dark:text-blanco-hielo">
+                                Datos de la reserva
+                            </legend>
+
+                            <div class="flex flex-col">
+                                <label for="campo-celular" class="mb-2 text-sm font-semibold text-azul-noche dark:text-blanco-hielo">
+                                    Celular <span class="text-azul-noche dark:text-verde-ruta" aria-hidden="true">*</span>
+                                </label>
+                                <input type="tel" id="campo-celular" name="celular" autocomplete="tel" inputmode="numeric" placeholder="3001234567"
+                                    pattern="3[0-9]{9}" minlength="10" maxlength="10" required aria-describedby="ayuda-celular"
+                                    title="Ingresa 10 dígitos; el primero debe ser 3."
+                                    class="w-full px-4 py-3 text-sm bg-blanco-hielo border border-azul-noche/45 rounded-lg text-azul-noche transition-colors dark:bg-azul-noche dark:border-blanco-hielo/40 dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 md:text-base focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie" />
+                                <p id="ayuda-celular" class="mt-1.5 text-xs text-azul-noche/70 dark:text-blanco-hielo/70">
+                                    Debe contener 10 dígitos y empezar por 3.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="campo-acompanantes" class="mb-2 text-sm font-semibold text-azul-noche dark:text-blanco-hielo">
+                                    Acompañantes <span class="text-azul-noche dark:text-verde-ruta" aria-hidden="true">*</span>
+                                </label>
+                                <input type="number" id="campo-acompanantes" name="acompanantes" min="0" max="3" step="1" placeholder="0" required
+                                    aria-describedby="ayuda-acompanantes"
+                                    class="w-full px-4 py-3 text-sm bg-blanco-hielo border border-azul-noche/45 rounded-lg text-azul-noche transition-colors dark:bg-azul-noche dark:border-blanco-hielo/40 dark:text-blanco-hielo md:text-base focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie" />
+                                <p id="ayuda-acompanantes" class="mt-1.5 text-xs text-azul-noche/70 dark:text-blanco-hielo/70">
+                                    Puedes registrar de 0 a 3 acompañantes.
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit" class="w-full px-6 py-3 btn-primary">
+                            Continuar inscripción
+                        </button>
+                    </form>
                                 Te contactaremos por WhatsApp 2 horas antes de la rodada para confirmar el estado del clima.
                             </p>
                         </div>
