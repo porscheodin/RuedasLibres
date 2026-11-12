@@ -84,6 +84,14 @@ body {
     line-height: 1.6;
 }
 
+.ubicacion-mapa {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 4 / 3;
+    border: 0;
+}
+
 h1,
 h2,
 h3,
@@ -187,6 +195,8 @@ a:hover {
 
 #menu form {
     margin-left: auto;
+    width: 22rem;
+    flex: 0 1 22rem;
     /* Empuja el buscador al extremo derecho del menú */
     display: flex;
     flex-direction: row;
@@ -198,6 +208,10 @@ a:hover {
     border-radius: 20px;
     padding: var(--spacin-xs) var(--spacin-sm);
     background: rgba(255, 255, 255, 0.05);
+}
+
+#menu li {
+    white-space: nowrap;
 }
 
 #menu input[type="search"] {
@@ -551,6 +565,44 @@ footer {
    10. ACCESIBILIDAD Y NAVEGACIÓN POR TECLADO
    ========================================================================== */
 :focus-visible {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+    #menu {
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--spacin-md);
+    }
+
+    #menu img {
+        align-self: center;
+    }
+
+    #menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacin-xs);
+    }
+
+    #menu form {
+        width: min(100%, 22rem);
+        margin-left: 0;
+        align-self: center;
+    }
+
+    #menu input[type="search"] {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+#menu input[type="search"]:focus-visible,
+#cuerpo form input:focus-visible,
+#cuerpo form select:focus-visible,
+#cuerpo form textarea:focus-visible,
+#cuerpo form button:focus-visible {
     outline: 2px solid var(--color-acento);
     outline-offset: 3px;
 }
