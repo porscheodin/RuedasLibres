@@ -2,35 +2,53 @@
    1. VARIABLES DE DISEÑO & RESET UNIVERSAL
    ========================================================================== */
 :root {
+    --bs-primary: #10B981;
+    --bs-primary-rgb: 16, 185, 129;
+    --bs-success: #10B981;
+    --bs-success-rgb: 16, 185, 129;
+    --bs-secondary: #F97316;
+    --bs-secondary-rgb: 249, 115, 22;
+    --bs-warning: #FBBF24;
+    --bs-warning-rgb: 251, 191, 36;
+    --bs-dark: #0B131E;
+    --bs-dark-rgb: 11, 19, 30;
+    --bs-light: #F1F5F9;
+    --bs-light-rgb: 241, 245, 249;
+    --bs-secondary-bg: #16222F;
+    --bs-secondary-bg-rgb: 22, 34, 47;
+    --bs-body-bg: var(--bs-dark);
+    --bs-body-color: var(--bs-light);
+    --bs-border-color: rgba(241, 245, 249, 0.1);
+
     /* Paleta 'Verde Ciclovía & Urbano' - Sostenible, Deportiva y Elegante */
-    --color-fondo: #0B131E;
+    --color-fondo: var(--bs-dark);
     /* Noche asfalto profundo */
-    --color-superficie: #16222F;
+    --color-superficie: var(--bs-secondary-bg);
     /* Fondo de secciones y tarjetas */
-    --color-superficie-card: #0F172A;
+    --color-superficie-card: var(--bs-secondary-bg);
     /* Fondo interno de tarjetas individuales */
-    --color-texto: #F1F5F9;
+    --color-texto: var(--bs-light);
     /* Blanco hielo suave (anti-fatiga visual) */
-    --color-texto-oscuro: #0B131E;
+    --color-texto-oscuro: var(--bs-dark);
     /* Texto oscuro sobre fondos claros/botones */
 
     /* Colores de Marca y Acción */
-    --color-primario: #10B981;
+    --color-primario: var(--bs-primary);
     /* Verde Esmeralda: Movilidad y ecología */
-    --color-secundario: #F97316;
+    --color-secundario: var(--bs-secondary);
     /* Naranja Aventura: Destacados y badge */
-    --color-boton: #10B981;
+    --color-boton: var(--bs-primary);
     /* Botón principal */
     --color-boton-hover: #059669;
     /* Hover botón principal */
-    --color-texto-boton: #34D399;
+    --color-texto-boton: var(--bs-primary);
     /* Menta Esmeralda: Enlaces interactivos */
-    --color-acento: #FBBF24;
+    --color-acento: var(--bs-warning);
     /* Ámbar Solar: Ítems activos y contrastes */
 
     /* Tipografía */
-    --font-primary: "Roboto", Arial, sans-serif;
-    --font-secundary: "Merriweather", Georgia, serif;
+    --font-primary: "Open Sans", sans-serif;
+    --font-secundary: "Montserrat", sans-serif;
 
     /* Escala Modular de Espaciados */
     --spacin-xs: 0.25rem;
@@ -73,6 +91,7 @@ h4,
 h5,
 h6 {
     color: var(--color-primario);
+    font-family: var(--font-secundary);
     margin-top: 0;
     margin-bottom: var(--spacin-md);
 }
@@ -295,6 +314,53 @@ details summary {
     border-radius: var(--spacin-xs);
     margin-bottom: var(--spacin-md);
     display: block;
+}
+
+.rueda-carousel {
+    overflow: hidden;
+    margin: var(--spacin-lg) 0;
+    border-radius: var(--spacin-sm);
+}
+
+.rueda-carousel .carousel-item img {
+    height: 32rem;
+    object-fit: cover;
+    filter: brightness(0.68);
+}
+
+.rueda-carousel .carousel-caption {
+    right: 12%;
+    bottom: 3rem;
+    left: 12%;
+    padding: var(--spacin-md);
+    background: rgba(11, 19, 30, 0.88);
+    border-radius: var(--spacin-sm);
+}
+
+.rueda-carousel .carousel-caption h4,
+.rueda-carousel .carousel-caption p {
+    color: var(--bs-light);
+}
+
+.rueda-carousel .carousel-indicators [data-bs-target] {
+    background-color: var(--bs-primary);
+}
+
+@media (max-width: 767.98px) {
+    .rueda-carousel .carousel-item img {
+        height: 24rem;
+    }
+
+    .rueda-carousel .carousel-caption {
+        right: 10%;
+        bottom: 2rem;
+        left: 10%;
+        padding: var(--spacin-sm);
+    }
+
+    .rueda-carousel .carousel-caption p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Etiqueta "Nuevo" en esquina superior sin desplazar el contenido */

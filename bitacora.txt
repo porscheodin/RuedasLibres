@@ -382,5 +382,25 @@ Resultados observados en el modelo de caja (DevTools):
 3. Cronómetro:
    - Se inició el timebox de 40 minutos el 2026-11-12 a las 10:52:01 (-05:00). Las pruebas finalizaron a las 10:54:59 (-05:00): tiempo real registrado, 2 minutos 58 segundos (178 segundos).
 
+--BITÁCORA: NAVEGACIÓN ENTRE RUEDA LIBRE Y RUEDA NOCTURNA--
+
+1. Sitio principal y carrusel:
+   - El sitio raíz no tenía Bootstrap ni carrusel en sus fuentes. Se integró Bootstrap 5.3.8 desde jsDelivr para las tres páginas del producto principal y se creó en index.html un carrusel de cuatro diapositivas con indicadores y controles accesibles; la cuarta presenta Rueda Nocturna y enlaza a nocturna/index.html.
+   - Se añadió Rueda Nocturna a la navbar de la portada, tarifas y reservas. Se corrigió el enlace preexistente a tarifas.html#recorridos-tarifas y el correo de ejemplo de la portada.
+
+2. Enlaces entre productos e identidad:
+   - En la landing Tailwind, el logo lleva a ../index.html y el botón 'Reserva tu bici' a ../paginas/reservas.html.
+   - Las variables --bs-primary, --bs-secondary, --bs-warning, --bs-dark, --bs-secondary-bg y --bs-light usan los mismos seis valores hex que los tokens Verde Ruta, Naranja Urbano, Amarillo Farol, Azul Noche, Azul Superficie y Blanco Hielo de @theme.
+   - Ambos productos cargan Open Sans y Montserrat desde Google Fonts. Los pies usan el mismo correo contacto@ruedaslibres.com y WhatsApp +57 300 000 0000.
+
+3. Verificación:
+   - En local, el navegador confirmó Bootstrap y el carrusel de cuatro elementos. La cuarta diapositiva mostró el CTA de Rueda Nocturna y abrió nocturna/index.html; desde allí, el logo abrió index.html y 'Reserva tu bici' resolvió a paginas/reservas.html.
+   - Se recorrieron los enlaces internos de index.html, paginas/tarifas.html, paginas/reservas.html y nocturna/index.html en HTTP local. El primer barrido encontró el ancla inexistente #recorridos; se corrigió a #recorridos-tarifas y el segundo barrido no encontró enlaces fallidos.
+   - GitHub Pages no está disponible en este repositorio: GET de https://api.github.com/repos/porscheodin/RuedasLibres/pages y https://porscheodin.github.io/RuedasLibres/ devolvieron 404. Solo existe main y no hay workflow de despliegue. Por eso no fue posible validar visualmente enlaces en Pages; las rutas relativas quedan listas para cuando Pages se habilite.
+   - El build de Tailwind terminó correctamente; src/output.css midió 36,190 bytes. Las comprobaciones de editor no reportaron errores y git diff --check pasó.
+
+4. Cronómetro de 40 minutos:
+   - Inicio: 2026-11-12 11:02:22 (-05:00). Fin: 2026-11-12 11:14:04 (-05:00). Tiempo real: 11 minutos 42 segundos (702 segundos).
+
 
 
