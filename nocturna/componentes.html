@@ -4,24 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Kit de Componentes | Ruedas Libres</title>
     <!-- Hoja de estilos compilada por la CLI de Tailwind -->
     <link rel="stylesheet" href="./src/output.css">
 </head>
 
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased p-6 md:p-12">
+<body class="bg-blanco-hielo dark:bg-azul-noche text-azul-noche dark:text-blanco-hielo min-h-screen font-open-sans antialiased p-6 md:p-12">
     <main class="max-w-4xl mx-auto space-y-16">
 
         <!-- Encabezado de la Guía de Componentes -->
-        <header class="border-b border-slate-800 pb-6">
+        <header class="border-b border-azul-noche/15 dark:border-blanco-hielo/10 pb-6">
             <span
-                class="inline-block px-3 py-1 text-xs font-semibold text-emerald-400 bg-emerald-950/70 border border-emerald-500/30 rounded-full uppercase tracking-wider mb-3">
+                class="inline-block px-3 py-1 text-xs font-semibold text-azul-noche dark:text-verde-ruta bg-verde-ruta/10 dark:bg-azul-noche border border-verde-ruta/30 dark:border-verde-ruta/50 rounded-full uppercase tracking-wider mb-3">
                 UI Kit & Design System
             </span>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-azul-noche dark:text-blanco-hielo tracking-tight font-montserrat">
                 Sistema de Componentes · Ruedas Libres
             </h1>
-            <p class="text-slate-400 text-lg mt-2 max-w-2xl">
+            <p class="text-azul-noche/70 dark:text-blanco-hielo/70 text-lg mt-2 max-w-2xl">
                 Catálogo de componentes modulares, accesibles y consistentes bajo las reglas del kit para la experiencia
                 nocturna.
             </p>
@@ -30,70 +33,70 @@
         <!-- 1. Botones y Card del MiniReto 3 -->
         <section class="space-y-8">
             <div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">1. Botones y Tarjeta de Ruta</h2>
-                <p class="text-slate-400 text-sm mt-1">Variantes de botones con estados interactivos y card con alto
+                <h2 class="text-2xl font-bold text-azul-noche dark:text-blanco-hielo tracking-tight font-montserrat">1. Botones y Tarjeta de Ruta</h2>
+                <p class="text-azul-noche/70 dark:text-blanco-hielo/70 text-sm mt-1">Variantes de botones con estados interactivos y card con alto
                     uniforme y efecto sin salto de diseño.</p>
             </div>
 
             <!-- Muestra de los 3 botones -->
-            <div class="flex flex-wrap items-center gap-4 p-6 bg-slate-900 border border-slate-800 rounded-2xl">
+            <div class="flex flex-wrap items-center gap-4 p-6 bg-azul-superficie/5 dark:bg-azul-superficie border border-azul-noche/15 dark:border-blanco-hielo/10 rounded-2xl">
                 <!-- Botón Primario -->
                 <button type="button"
-                    class="inline-block bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all text-center focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900">
+                    class="inline-block bg-verde-ruta hover:bg-verde-ruta/90 text-azul-noche font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-verde-ruta/25 transition-all text-center focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie">
                     Inscríbete ahora (Primario)
                 </button>
 
                 <!-- Botón Secundario -->
                 <button type="button"
-                    class="inline-block border-2 border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 font-bold px-6 py-3 rounded-lg transition-all text-center focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900">
+                    class="inline-block border-2 border-verde-ruta dark:border-verde-ruta text-azul-noche dark:text-verde-ruta hover:bg-verde-ruta/10 dark:hover:bg-verde-ruta/15 font-bold px-6 py-3 rounded-lg transition-all text-center focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie">
                     Ver recorrido (Secundario)
                 </button>
 
                 <!-- Botón Terciario -->
                 <button type="button"
-                    class="inline-block text-slate-400 hover:text-white hover:bg-slate-800 font-medium px-5 py-3 rounded-lg transition-all text-center focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900">
+                    class="inline-block text-azul-noche/70 dark:text-blanco-hielo/70 hover:text-azul-noche dark:hover:text-blanco-hielo hover:bg-azul-noche/10 dark:hover:bg-azul-superficie font-medium px-5 py-3 rounded-lg transition-all text-center focus:outline-none focus:ring-2 focus:ring-azul-noche dark:focus:ring-blanco-hielo focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie">
                     Volver (Terciario)
                 </button>
             </div>
 
             <!-- Card de Ruta del MiniReto 3 -->
             <article
-                class="bg-slate-900 border border-slate-800 hover:border-emerald-500/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 max-w-xl">
+                class="bg-azul-superficie/5 dark:bg-azul-superficie border border-azul-noche/15 dark:border-blanco-hielo/10 hover:border-verde-ruta/60 dark:hover:border-verde-ruta/70 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-verde-ruta/10 transition-all duration-300 max-w-xl">
                 <img src="../img/alquiler.jpg" alt="Ruta Nocturna Parques del Río" class="w-full h-56 object-cover">
                 <div class="p-6 md:p-8">
                     <div class="flex items-center justify-between gap-3 mb-4">
                         <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold text-emerald-400 bg-emerald-950/90 border border-emerald-500/40 rounded-full">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400" aria-hidden="true"></span>
+                            class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold text-azul-noche dark:text-verde-ruta bg-verde-ruta/10 dark:bg-azul-noche border border-verde-ruta/40 dark:border-verde-ruta/60 rounded-full">
+                            <span class="w-2 h-2 rounded-full bg-verde-ruta" aria-hidden="true"></span>
                             Nivel: Principiante / Fácil
                         </span>
-                        <span class="text-xs text-slate-400 font-medium">Salida: 6:30 p. m.</span>
+                        <span class="text-xs text-azul-noche/70 dark:text-blanco-hielo/70 font-medium">Salida: 6:30 p. m.</span>
                     </div>
 
-                    <h3 class="text-2xl font-bold text-white mb-4">Ruta Panorámica Parques del Río</h3>
+                    <h3 class="text-2xl font-bold text-azul-noche dark:text-blanco-hielo mb-4 font-montserrat">Ruta Panorámica Parques del Río</h3>
 
-                    <ul class="grid grid-cols-3 gap-4 py-4 my-4 border-y border-slate-800/80">
+                    <ul class="grid grid-cols-3 gap-4 py-4 my-4 border-y border-azul-noche/15 dark:border-blanco-hielo/10">
                         <li class="flex flex-col">
-                            <span class="text-xs uppercase font-semibold text-slate-400">Distancia</span>
-                            <strong class="text-base font-bold text-slate-100 mt-1">12 km</strong>
+                            <span class="text-xs uppercase font-semibold text-azul-noche/70 dark:text-blanco-hielo/70">Distancia</span>
+                            <strong class="text-base font-bold text-azul-noche dark:text-blanco-hielo mt-1">12 km</strong>
                         </li>
                         <li class="flex flex-col">
-                            <span class="text-xs uppercase font-semibold text-slate-400">Duración</span>
-                            <strong class="text-base font-bold text-slate-100 mt-1">2 Horas</strong>
+                            <span class="text-xs uppercase font-semibold text-azul-noche/70 dark:text-blanco-hielo/70">Duración</span>
+                            <strong class="text-base font-bold text-azul-noche dark:text-blanco-hielo mt-1">2 Horas</strong>
                         </li>
                         <li class="flex flex-col">
-                            <span class="text-xs uppercase font-semibold text-slate-400">Punto</span>
-                            <strong class="text-base font-bold text-slate-100 mt-1">Parques del Río</strong>
+                            <span class="text-xs uppercase font-semibold text-azul-noche/70 dark:text-blanco-hielo/70">Punto</span>
+                            <strong class="text-base font-bold text-azul-noche dark:text-blanco-hielo mt-1">Parques del Río</strong>
                         </li>
                     </ul>
 
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6">
                         <div>
-                            <span class="block text-xs uppercase font-semibold text-slate-400">Precio por persona</span>
-                            <p class="text-2xl font-extrabold text-emerald-400">$55.000 COP</p>
+                            <span class="block text-xs uppercase font-semibold text-azul-noche/70 dark:text-blanco-hielo/70">Precio por persona</span>
+                            <p class="text-2xl font-extrabold text-azul-noche dark:text-verde-ruta">$55.000 COP</p>
                         </div>
                         <a href="#inscribete"
-                            class="inline-block bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base px-6 py-3 rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all text-center focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900">
+                            class="inline-block bg-verde-ruta hover:bg-verde-ruta/90 text-azul-noche font-bold text-base px-6 py-3 rounded-lg shadow-lg hover:shadow-verde-ruta/25 transition-all text-center focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie">
                             Inscríbete
                         </a>
                     </div>
@@ -104,18 +107,18 @@
         <!-- 2. Tres Alertas con Fondo Suave y Borde Lateral -->
         <section class="space-y-6">
             <div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">2. Alertas del Sistema</h2>
-                <p class="text-slate-400 text-sm mt-1">Fondo suave, borde lateral destacado y semántica ARIA para
+                <h2 class="text-2xl font-bold text-azul-noche dark:text-blanco-hielo tracking-tight font-montserrat">2. Alertas del Sistema</h2>
+                <p class="text-azul-noche/70 dark:text-blanco-hielo/70 text-sm mt-1">Fondo suave, borde lateral destacado y semántica ARIA para
                     lectores de pantalla.</p>
             </div>
 
             <div class="space-y-4">
                 <!-- Alerta 1: Información -->
-                <div class="bg-sky-950/40 border-l-4 border-sky-500 border border-slate-800/60 p-4 rounded-lg">
-                    <h4 class="text-base font-bold text-sky-400 flex items-center gap-2">
+                <div class="bg-verde-ruta/10 dark:bg-azul-noche border-l-4 border-verde-ruta dark:border-verde-ruta border border-azul-noche/15 dark:border-blanco-hielo/10 p-4 rounded-lg">
+                    <h4 class="text-base font-bold text-azul-noche dark:text-verde-ruta flex items-center gap-2">
                         <span>ℹ️</span> Información importante
                     </h4>
-                    <p class="text-sm text-slate-300 mt-1">
+                    <p class="text-sm text-azul-noche/80 dark:text-blanco-hielo/80 mt-1">
                         Recuerda presentarte con 15 minutos de anticipación en el punto de encuentro para la inspección
                         de luces y ajuste del casco.
                     </p>
@@ -123,11 +126,11 @@
 
                 <!-- Alerta 2: Éxito (role="status" avisa al lector de pantalla de forma polite) -->
                 <div role="status"
-                    class="bg-emerald-950/40 border-l-4 border-emerald-500 border border-slate-800/60 p-4 rounded-lg">
-                    <h4 class="text-base font-bold text-emerald-400 flex items-center gap-2">
+                    class="bg-verde-ruta/10 dark:bg-azul-noche border-l-4 border-verde-ruta dark:border-verde-ruta border border-azul-noche/15 dark:border-blanco-hielo/10 p-4 rounded-lg">
+                    <h4 class="text-base font-bold text-azul-noche dark:text-verde-ruta flex items-center gap-2">
                         <span>✅</span> Registro completado con éxito
                     </h4>
-                    <p class="text-sm text-slate-300 mt-1">
+                    <p class="text-sm text-azul-noche/80 dark:text-blanco-hielo/80 mt-1">
                         Tu cupo para la rodada nocturna ha sido reservado. Te enviamos los detalles del recorrido y la
                         póliza a tu correo.
                     </p>
@@ -135,11 +138,11 @@
 
                 <!-- Alerta 3: Advertencia -->
                 <div role="alert"
-                    class="bg-amber-950/40 border-l-4 border-amber-500 border border-slate-800/60 p-4 rounded-lg">
-                    <h4 class="text-base font-bold text-amber-400 flex items-center gap-2">
+                    class="bg-amarillo-farol/15 dark:bg-azul-noche border-l-4 border-amarillo-farol dark:border-amarillo-farol border border-azul-noche/15 dark:border-blanco-hielo/10 p-4 rounded-lg">
+                    <h4 class="text-base font-bold text-azul-noche dark:text-amarillo-farol flex items-center gap-2">
                         <span>⚠️</span> Advertencia de disponibilidad
                     </h4>
-                    <p class="text-sm text-slate-300 mt-1">
+                    <p class="text-sm text-azul-noche/80 dark:text-blanco-hielo/80 mt-1">
                         Quedan menos de 3 bicicletas eléctricas disponibles para este sábado. Asegura la tuya antes del
                         cierre de inscripciones.
                     </p>
@@ -150,41 +153,41 @@
         <!-- 3. Campos de Formulario con Accesibilidad y Foco Visible -->
         <section class="space-y-6">
             <div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">3. Campos de Formulario</h2>
-                <p class="text-slate-400 text-sm mt-1">Etiquetas asociadas con for/id, texto de ayuda con
+                <h2 class="text-2xl font-bold text-azul-noche dark:text-blanco-hielo tracking-tight font-montserrat">3. Campos de Formulario</h2>
+                <p class="text-azul-noche/70 dark:text-blanco-hielo/70 text-sm mt-1">Etiquetas asociadas con for/id, texto de ayuda con
                     aria-describedby y anillo de foco visible.</p>
             </div>
 
-            <form class="space-y-6 max-w-lg bg-slate-900 border border-slate-800 p-6 md:p-8 rounded-2xl"
+            <form class="space-y-6 max-w-lg bg-azul-superficie/5 dark:bg-azul-superficie border border-azul-noche/15 dark:border-blanco-hielo/10 p-6 md:p-8 rounded-2xl"
                 onsubmit="return false;">
                 <!-- Campo 1: Correo electrónico -->
                 <div class="flex flex-col">
-                    <label for="campo-correo" class="text-sm font-semibold text-slate-200 mb-2">
-                        Correo electrónico <span class="text-emerald-400">*</span>
+                    <label for="campo-correo" class="text-sm font-semibold text-azul-noche dark:text-blanco-hielo mb-2">
+                        Correo electrónico <span class="text-azul-noche dark:text-verde-ruta">*</span>
                     </label>
                     <input type="email" id="campo-correo" name="correo" placeholder="ejemplo@correo.com"
                         aria-describedby="ayuda-correo" required
-                        class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 text-sm md:text-base transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent focus:ring-offset-2 focus:ring-offset-slate-900" />
-                    <p id="ayuda-correo" class="text-xs text-slate-400 mt-1.5">
+                        class="w-full bg-blanco-hielo dark:bg-azul-noche border border-azul-noche/45 dark:border-blanco-hielo/40 rounded-lg px-4 py-3 text-azul-noche dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 text-sm md:text-base transition-colors focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie" />
+                    <p id="ayuda-correo" class="text-xs text-azul-noche/70 dark:text-blanco-hielo/70 mt-1.5">
                         Usaremos tu correo únicamente para enviarte la confirmación y la guía de seguridad.
                     </p>
                 </div>
 
                 <!-- Campo 2: Celular -->
                 <div class="flex flex-col">
-                    <label for="campo-celular" class="text-sm font-semibold text-slate-200 mb-2">
-                        Número de celular (WhatsApp) <span class="text-emerald-400">*</span>
+                    <label for="campo-celular" class="text-sm font-semibold text-azul-noche dark:text-blanco-hielo mb-2">
+                        Número de celular (WhatsApp) <span class="text-azul-noche dark:text-verde-ruta">*</span>
                     </label>
                     <input type="tel" id="campo-celular" name="celular" placeholder="300 123 4567"
                         aria-describedby="ayuda-celular" required
-                        class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 text-sm md:text-base transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent focus:ring-offset-2 focus:ring-offset-slate-900" />
-                    <p id="ayuda-celular" class="text-xs text-slate-400 mt-1.5">
+                        class="w-full bg-blanco-hielo dark:bg-azul-noche border border-azul-noche/45 dark:border-blanco-hielo/40 rounded-lg px-4 py-3 text-azul-noche dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 text-sm md:text-base transition-colors focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie" />
+                    <p id="ayuda-celular" class="text-xs text-azul-noche/70 dark:text-blanco-hielo/70 mt-1.5">
                         Te contactaremos por WhatsApp 2 horas antes de la rodada para confirmar el estado del clima.
                     </p>
                 </div>
 
                 <button type="submit"
-                    class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900">
+                    class="w-full bg-verde-ruta hover:bg-verde-ruta/90 text-azul-noche font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-verde-ruta/25 transition-all focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie">
                     Continuar inscripción
                 </button>
             </form>
