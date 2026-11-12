@@ -5,10 +5,11 @@ Sitio estático para conocer y reservar bicicletas y recorridos guiados en Medel
 ## Enlaces
 
 - Repositorio: [github.com/porscheodin/RuedasLibres](https://github.com/porscheodin/RuedasLibres)
-- URL prevista del sitio: [porscheodin.github.io/RuedasLibres](https://porscheodin.github.io/RuedasLibres/)
-- Landing nocturna prevista: [porscheodin.github.io/RuedasLibres/nocturna](https://porscheodin.github.io/RuedasLibres/nocturna/)
+- Sitio público: [Portada](https://porscheodin.github.io/RuedasLibres/)
+- Landing nocturna: [Rueda Nocturna](https://porscheodin.github.io/RuedasLibres/nocturna/)
+- Formulario de reserva: [Reservas](https://porscheodin.github.io/RuedasLibres/paginas/reservas.html)
 
-**Estado de publicación:** las dos URLs de Pages devuelven 404 porque GitHub Pages aún no está habilitado para el repositorio. La sesión de trabajo no tiene acceso autenticado a Settings. Para publicar: en GitHub abre **Settings → Pages**, elige **GitHub Actions** como fuente y después ejecuta **Actions → Deploy static site to GitHub Pages → Run workflow**. El workflow manual está en `.github/workflows/pages.yml`.
+**Estado de publicación:** verificado en GitHub Pages. El workflow manual #2 terminó correctamente en 23 s para el commit `1b1cacf`. Para volver a publicar, abre **Actions → Deploy static site to GitHub Pages → Run workflow**.
 
 ## Páginas
 
@@ -54,7 +55,7 @@ Recomendación: conservar Bootstrap en el sitio principal existente y usar Tailw
 
 ## Verificación y aprendizajes
 
-- El validador Nu del W3C reporta cero mensajes para portada, tarifas, reservas y landing nocturna.
+- El validador Nu del W3C reporta cero mensajes para portada, tarifas, reservas, landing nocturna y kit de componentes.
 - Los enlaces y recursos internos se comprobaron en local; las páginas no presentan overflow a 360, 768 ni 1280 px.
 - Los formularios de reservas e inscripción se probaron vacíos y completos; el teléfono de reservas requiere diez dígitos y comienza por 3.
 - La navegación tiene nombres accesibles, imágenes con texto alternativo, encabezados jerárquicos y focos visibles. No hay atributos `style` en línea.
@@ -69,7 +70,7 @@ Recomendación: conservar Bootstrap en el sitio principal existente y usar Tailw
 3. **0:55–1:35, landing e inscripción.** Presentar las rutas, comparar Individual/Pareja/Grupo y mostrar cómo el CTA lleva al formulario validado.
 4. **1:35–2:05, celular y tema.** Cambiar el viewport a 360 px, enseñar el apilado de cards y emular `prefers-color-scheme: dark`.
 5. **2:05–2:45, decisiones técnicas.** Explicar dos decisiones: Bootstrap conserva una navegación/carrusel estándar en el sitio existente; Tailwind resuelve la paleta propia, `@theme` y dark mode de la experiencia nocturna. Añadir que la grilla usa filas fraccionarias para mantener cards de igual altura.
-6. **2:45–3:00, cierre.** Resumir los enlaces de navegación, el contraste verificado y el próximo paso de activar Pages.
+6. **2:45–3:00, cierre.** Resumir los enlaces publicados, el contraste verificado y el resultado del checklist.
 
 **Ensayo y retroalimentación:** pendiente de practicar frente a un compañero. No se registró feedback de una persona porque no hay un compañero disponible en este entorno; completar esta nota después del ensayo real.
 
