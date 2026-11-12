@@ -338,5 +338,31 @@ Resultados observados en el modelo de caja (DevTools):
 5. Reutilización de componentes:
    - Se copiaron íntegramente los botones, tarjetas, alertas y formulario desde 'componentes.html', preservando los tokens de diseño (radios rounded-lg / rounded-2xl, espaciados y anillos de foco accesible).
 
+--BITÁCORA: REUTILIZACIÓN DE BOTONES, MINIFICACIÓN Y COMPARATIVA DE FRAMEWORKS--
+
+1. Conteo de repeticiones antes de extraer los botones:
+   - La landing tenía 6 botones primarios, 1 secundario y 1 terciario. El botón primario compacto de las tarjetas aparecía 3 veces con la misma lista de clases.
+   - La lista completa de clases de los campos de correo y celular aparecía 2 veces.
+   - Otras listas frecuentes: etiqueta de datos (10 apariciones), 'flex justify-between' (9), texto principal (9), enlaces de navegación (8), texto de detalle con leading relajado (5) y contenedor 'max-w-6xl mx-auto px-6' (4).
+   - Se definieron tres clases con @apply en la capa components: .btn-primary, .btn-secondary y .btn-tertiary. Se aplicaron a los botones de la landing y del kit, que conserva las mismas tres variantes.
+   - Las cards y los campos permanecen expresados con utilidades del kit; no se añadieron clases propias para esas piezas grandes. Las clases de los elementos se ordenaron por layout, espaciado, tipografía, color y estados.
+
+2. Tamaños medidos:
+   - El script de build ejecuta 'tailwindcss -i ./src/input.css -o ./src/output.css --minify'. Después del build, 'wc -c src/output.css' reportó 36,158 bytes.
+   - 'src/output.css' se comparte entre la landing y componentes.html y Tailwind detecta las páginas HTML del proyecto. Por tanto, los 36,158 bytes son el CSS minificado servido por la landing en este proyecto, no una compilación aislada exclusiva de index.html.
+   - Como referencia reproducible se cargaron en el navegador los recursos oficiales de Bootstrap 5.3.8 desde jsDelivr: bootstrap.min.css midió 232,111 bytes decodificados y bootstrap.bundle.min.js midió 80,496 bytes decodificados. Las respuestas declararon Content-Encoding: br y Content-Length de 33,048 bytes para CSS y 24,469 bytes para JavaScript.
+   - Comparando el tamaño decodificado del CSS, Bootstrap mide 6.42 veces el CSS minificado medido de Tailwind. Los tamaños transferidos Brotli se anotan por separado y no se comparan directamente con el archivo local sin comprimir.
+   - Limitación de alcance: no se encontró el sitio v2.0 ni un archivo suyo con Bootstrap en el repositorio o en el historial; solo existe la rama remota main. Las dos URL de GitHub Pages comprobadas devolvieron 404. Por esto, los valores Bootstrap anteriores son una referencia del CDN 5.3.8, no una medición atribuible al Network del sitio v2.0. Para obtener esa cifra exacta hace falta una URL v2.0 accesible y registrar allí los recursos en DevTools > Network.
+   - La landing actual no carga un bundle JavaScript de Tailwind. La cifra del bundle JavaScript de Bootstrap es una referencia de Bootstrap Bundle; solo se justifica incluirlo en una página si usa sus componentes interactivos.
+
+3. Comparativa basada en la implementación:
+   - Curva de aprendizaje: Bootstrap permite empezar rápido con componentes y estilos conocidos; Tailwind requiere aprender nombres y composición de utilidades. En esta landing, extraer las tres variantes con @apply redujo la repetición de los botones sin ocultar el diseño de las cards.
+   - Personalización: Tailwind permitió expresar directamente la paleta de marca, las fuentes y los estados dark: con los tokens del proyecto. Bootstrap ofrece personalización mediante su sistema de variables, pero ajustes fuera de sus componentes requieren configuración o CSS adicional.
+   - Tamaño final: el CSS medido de Tailwind fue 36,158 bytes frente a 232,111 bytes decodificados para el CSS CDN de Bootstrap 5.3.8 de referencia; la respuesta CDN comprimida fue 33,048 bytes. Bootstrap Bundle añadió 80,496 bytes decodificados de JavaScript (24,469 bytes transferidos). No son dos builds equivalentes ni los recursos comprobados del v2.0, así que las cifras sirven como referencia de tamaño, no como benchmark controlado.
+   - Casos de uso: Bootstrap conviene cuando se priorizan componentes estándar, prototipos rápidos o plugins JavaScript listos. Tailwind conviene cuando se necesita una identidad visual propia y se quiere compilar solo las utilidades detectadas; las clases @apply sirven para las variantes repetidas, mientras las cards siguen visibles en el marcado.
+
+4. Recomendación para Rueda Libre:
+   - Mantener Tailwind en la experiencia nocturna: la marca requiere una paleta y temas propios, el HTML actual no necesita el JavaScript de Bootstrap y el CSS generado quedó acotado al uso del proyecto. La decisión está respaldada por la implementación y las mediciones de referencia, no por una comparación directa con una v2.0 que no estuvo disponible.
+
 
 

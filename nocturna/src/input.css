@@ -10,3 +10,17 @@
 	--font-montserrat: "Montserrat", sans-serif;
 	--font-open-sans: "Open Sans", sans-serif;
 }
+
+@layer components {
+	.btn-primary {
+		@apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold text-center text-azul-noche bg-verde-ruta shadow-lg transition-all hover:bg-verde-ruta/90 hover:shadow-verde-ruta/25 focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie;
+	}
+
+	.btn-secondary {
+		@apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold text-center border-2 border-verde-ruta text-azul-noche dark:text-verde-ruta transition-all hover:bg-verde-ruta/10 dark:hover:bg-verde-ruta/15 focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie;
+	}
+
+	.btn-tertiary {
+		@apply inline-flex items-center justify-center px-5 py-3 rounded-lg font-medium text-center text-azul-noche/70 dark:text-blanco-hielo/70 transition-all hover:text-azul-noche dark:hover:text-blanco-hielo hover:bg-azul-noche/10 dark:hover:bg-azul-superficie focus:outline-none focus:ring-2 focus:ring-azul-noche dark:focus:ring-blanco-hielo focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie;
+	}
+}
