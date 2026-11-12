@@ -402,5 +402,27 @@ Resultados observados en el modelo de caja (DevTools):
 4. Cronómetro de 40 minutos:
    - Inicio: 2026-11-12 11:02:22 (-05:00). Fin: 2026-11-12 11:14:04 (-05:00). Tiempo real: 11 minutos 42 segundos (702 segundos).
 
+--BITÁCORA: PLANES RESPONSIVOS PARA LA RODADA NOCTURNA--
+
+1. Estructura y box model:
+   - Se añadió la sección de planes con una columna en móvil y tres desde lg. Cada card usa box-sizing border-box, 24 px de padding y una lista de beneficios flex con separación uniforme de 12 px.
+   - Las cards son contenedores flex en columna y el CTA usa mt-auto para quedarse al final. auto-rows-fr mantiene igual altura en las filas implícitas del diseño móvil.
+   - Pareja destaca con borde Amarillo Farol de 2 px y fondo distinto. El badge 'Más elegido' ocupa un espacio superior reservado de 32 px en las tres cards, por lo que no altera la posición de las demás.
+   - Los precios Individual/Pareja/Grupo ($55.000/$110.000/$165.000 COP) se calculan con la tarifa existente de $55.000 COP por persona de Parques del Río; no representan un descuento.
+
+2. Medidas de DevTools:
+   - A 320 px: las tres cards midieron 257 px de ancho y 496 px de alto.
+   - A 390 px: las tres midieron 327 px de ancho y 438 px de alto.
+   - A 1024 px: las alturas fueron 458 px; los anchos calculados fueron 304.328, 304.328 y 304.344 px por redondeo subpíxel de CSS Grid (iguales al píxel visible).
+   - A 1440 px: cada card midió 352 px de ancho y 438 px de alto.
+   - En todos los tamaños el padding calculado fue 24 px, box-sizing border-box, y no hubo overflow horizontal.
+
+3. Contraste en oscuro:
+   - Verde Ruta sobre Azul Superficie: 6.35:1; Blanco Hielo sobre Azul Superficie: 14.70:1; Azul Noche sobre Amarillo Farol en el badge: 11.17:1. Las combinaciones de texto cumplen WCAG AA.
+   - En prefers-color-scheme: dark, las superficies de las cards son Azul Superficie, los títulos Blanco Hielo y los precios Verde Ruta.
+
+4. Cronómetro de 45 minutos:
+   - Inicio: 2026-11-12 11:17:34 (-05:00). Fin: 2026-11-12 11:21:28 (-05:00). Tiempo real: 3 minutos 54 segundos (234 segundos).
+
 
 
