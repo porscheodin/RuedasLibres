@@ -96,7 +96,7 @@
                             <span class="block text-xs uppercase font-semibold text-azul-noche/70 dark:text-blanco-hielo/70">Precio por persona</span>
                             <p class="text-2xl font-extrabold text-azul-noche dark:text-verde-ruta">$55.000 COP</p>
                         </div>
-                        <a href="#inscribete"
+                        <a href="#campos-form"
                             class="px-6 py-3 text-base btn-primary">
                             Inscríbete
                         </a>
@@ -116,9 +116,9 @@
             <div class="space-y-4">
                 <!-- Alerta 1: Información -->
                 <div class="p-4 bg-verde-ruta/10 border-l-4 border-verde-ruta border border-azul-noche/15 rounded-lg dark:bg-azul-noche dark:border-verde-ruta dark:border-blanco-hielo/10">
-                    <h4 class="flex items-center gap-2 text-base font-bold text-azul-noche dark:text-verde-ruta">
+                    <h3 class="flex items-center gap-2 text-base font-bold text-azul-noche dark:text-verde-ruta">
                         <span>ℹ️</span> Información importante
-                    </h4>
+                    </h3>
                     <p class="mt-1 text-sm text-azul-noche/80 dark:text-blanco-hielo/80">
                         Recuerda presentarte con 15 minutos de anticipación en el punto de encuentro para la inspección
                         de luces y ajuste del casco.
@@ -128,9 +128,9 @@
                 <!-- Alerta 2: Éxito (role="status" avisa al lector de pantalla de forma polite) -->
                 <div role="status"
                     class="p-4 bg-verde-ruta/10 border-l-4 border-verde-ruta border border-azul-noche/15 rounded-lg dark:bg-azul-noche dark:border-verde-ruta dark:border-blanco-hielo/10">
-                    <h4 class="flex items-center gap-2 text-base font-bold text-azul-noche dark:text-verde-ruta">
+                    <h3 class="flex items-center gap-2 text-base font-bold text-azul-noche dark:text-verde-ruta">
                         <span>✅</span> Registro completado con éxito
-                    </h4>
+                    </h3>
                     <p class="mt-1 text-sm text-azul-noche/80 dark:text-blanco-hielo/80">
                         Tu cupo para la rodada nocturna ha sido reservado. Te enviamos los detalles del recorrido y la
                         póliza a tu correo.
@@ -140,9 +140,9 @@
                 <!-- Alerta 3: Advertencia -->
                 <div role="alert"
                     class="p-4 bg-amarillo-farol/15 border-l-4 border-amarillo-farol border border-azul-noche/15 rounded-lg dark:bg-azul-noche dark:border-amarillo-farol dark:border-blanco-hielo/10">
-                    <h4 class="flex items-center gap-2 text-base font-bold text-azul-noche dark:text-amarillo-farol">
+                    <h3 class="flex items-center gap-2 text-base font-bold text-azul-noche dark:text-amarillo-farol">
                         <span>⚠️</span> Advertencia de disponibilidad
-                    </h4>
+                    </h3>
                     <p class="mt-1 text-sm text-azul-noche/80 dark:text-blanco-hielo/80">
                         Quedan menos de 3 bicicletas eléctricas disponibles para este sábado. Asegura la tuya antes del
                         cierre de inscripciones.
@@ -159,7 +159,7 @@
                     aria-describedby y anillo de foco visible.</p>
             </div>
 
-            <form class="max-w-lg space-y-6 p-6 bg-azul-superficie/5 border border-azul-noche/15 rounded-2xl dark:bg-azul-superficie dark:border-blanco-hielo/10 md:p-8"
+            <form id="campos-form" class="max-w-lg space-y-6 p-6 bg-azul-superficie/5 border border-azul-noche/15 rounded-2xl dark:bg-azul-superficie dark:border-blanco-hielo/10 md:p-8"
                 onsubmit="return false;">
                 <!-- Campo 1: Correo electrónico -->
                 <div class="flex flex-col">
@@ -168,7 +168,7 @@
                     </label>
                     <input type="email" id="campo-correo" name="correo" placeholder="ejemplo@correo.com"
                         aria-describedby="ayuda-correo" required
-                        class="w-full px-4 py-3 text-sm bg-blanco-hielo border border-azul-noche/45 rounded-lg text-azul-noche transition-colors dark:bg-azul-noche dark:border-blanco-hielo/40 dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 md:text-base focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie" />
+                        class="w-full px-4 py-3 text-sm bg-blanco-hielo border border-azul-noche/45 rounded-lg text-azul-noche transition-colors dark:bg-azul-noche dark:border-blanco-hielo/40 dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 md:text-base focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie">
                     <p id="ayuda-correo" class="mt-1.5 text-xs text-azul-noche/70 dark:text-blanco-hielo/70">
                         Usaremos tu correo únicamente para enviarte la confirmación y la guía de seguridad.
                     </p>
@@ -181,7 +181,7 @@
                     </label>
                     <input type="tel" id="campo-celular" name="celular" placeholder="300 123 4567"
                         aria-describedby="ayuda-celular" required
-                        class="w-full px-4 py-3 text-sm bg-blanco-hielo border border-azul-noche/45 rounded-lg text-azul-noche transition-colors dark:bg-azul-noche dark:border-blanco-hielo/40 dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 md:text-base focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie" />
+                        class="w-full px-4 py-3 text-sm bg-blanco-hielo border border-azul-noche/45 rounded-lg text-azul-noche transition-colors dark:bg-azul-noche dark:border-blanco-hielo/40 dark:text-blanco-hielo placeholder:text-azul-noche/65 dark:placeholder:text-blanco-hielo/65 md:text-base focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-transparent focus:ring-offset-2 focus:ring-offset-blanco-hielo dark:focus:ring-offset-azul-superficie">
                     <p id="ayuda-celular" class="mt-1.5 text-xs text-azul-noche/70 dark:text-blanco-hielo/70">
                         Te contactaremos por WhatsApp 2 horas antes de la rodada para confirmar el estado del clima.
                     </p>
